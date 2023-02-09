@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  background-color: pink;
+  animation: opa 1s ease;
+}
+.react-ripples {
+  border-radius: 0.5rem;
+}
+.slide-in {
+  animation: slide-in 850ms ease-in-out;
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes opa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
