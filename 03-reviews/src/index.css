@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  place-content: center;
+  font-family: "Inter", sans-serif;
+  background-color: hsl(149, 80%, 99%);
+  --green: hsl(160, 84%, 39%);
+}
+/* Title Hover  */
+.title::after {
+  left: 0;
+  content: "";
+  height: 3px;
+  width: 100%;
+  bottom: -10%;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: rgb(16 185 129);
+  transition: all 350ms ease-in-out;
+}
+.title:hover::after {
+  transform: scaleX(1);
+}
+/* Profile Picture  */
+.image-section {
+  box-shadow: 7px -3px 0 0 var(--green);
+}
+.image-section:hover {
+  box-shadow: 10px -5px 0 0 var(--green);
+}
+/* Arrows Styling  */
+.arrows-icon {
+  fill: transparent;
+  stroke: var(--green);
+  transition: all 350ms ease-in-out;
+}
+.arrows-icon:hover {
+  transform: scale(1.2);
+  stroke: rgb(236 253 245);
+  fill: var(--green);
+}
+.slide {
+  opacity: 0.9;
+  transform: scale(1.05);
+  transition: all 1s ease-in-out;
+}
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 1s ease-in-out;
+}
+.main-container {
+  background: linear-gradient(
+    to bottom,
+    hsl(0, 0%, 99%) 0%,
+    hsl(149, 80%, 93%) 100%
+  );
+}
+/* All the Animations  */
+.anime {
+  animation: slide-in 800ms ease-in-out;
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
