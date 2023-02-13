@@ -8,11 +8,11 @@ export default function Accordion({ title, info }) {
     <>
       <article>
         <Ripples color="#dfc2a2" during={1200}>
-          <div className="content-container |  px-4 py-2 md:py-3 border border-[var(--outline)] transition-all duration-300 ease-in-out rounded-md lg:rounded-lg hover:bg-[var(--hover)]">
+          <div className="content-container | px-4 py-2 md:py-3 border border-[var(--outline)] transition-all duration-300 ease-in-out rounded-md lg:rounded-lg hover:bg-[var(--hover)]">
             <div className="Question-container | grid gap-2">
               <div
                 onClick={() => setisOpen(!isOpen)}
-                className="heading | flex items-center justify-between hover:cursor-pointer"
+                className="heading | flex gap-4 md:gap-8 items-center justify-between hover:cursor-pointer"
               >
                 <h2 className="text-lg lg:text-xl font-medium text-[var(--on-background)]">
                   {title}
