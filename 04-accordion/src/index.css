@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --background: #1f1b16;
+  --on-background: #ebe1d9;
+  --on-surface: #6750a40d;
+  --outline: #827568;
+  --hover: #504539;
+
+  --on-secondary: #57432b;
+  --on-secondary-container: #fcdebc;
+
+  --box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 0.2),
+    0px 2px 2px 0px rgb(0 0 0 / 0.14), 0px 1px 5px 0px rgb(0 0 0 / 0.12);
+}
+body {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  place-content: center;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background);
+}
+.wrapper {
+  box-shadow: var(--box-shadow);
+}
+/* Title Hover  */
+.title::after {
+  left: 0;
+  content: "";
+  height: 3px;
+  width: 100%;
+  bottom: -10%;
+  position: absolute;
+  transform: scaleX(0);
+  border-radius: 100vmax;
+  background-color: #ffb95c;
+  transform-origin: bottom right;
+  transition: transform 250ms ease-in-out;
+}
+.title:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* Content Container Hover  */
+.content-container:hover {
+  --radius: 0.5rem;
+  color: #d4c4b5;
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+}
+.react-ripples {
+  --radius: 0.35rem;
+  border-radius: var(--radius);
+}
+@media (min-width: 1023px) {
+  .content-container:hover {
+    --radius: 0.75rem;
+  }
+  .react-ripples {
+    --radius: 0.5rem;
+  }
+}
+/* Scrollbar Styling  */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  margin-block: 0.5rem;
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 100vmax;
+  background: var(--on-secondary-container);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--on-secondary);
+}

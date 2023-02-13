@@ -1,0 +1,61 @@
+body {
+  animation: hidden 1.5s ease;
+}
+@keyframes hidden {
+  from {
+    overflow-y: hidden;
+  }
+  to {
+    overflow-y: hidden;
+  }
+}
+/* Text Animation  */
+.tracking-in {
+  animation: tracking-in 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@keyframes tracking-in {
+  0% {
+    opacity: 0;
+    letter-spacing: -0.5em;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Main Container Animation  */
+.slide-in {
+  animation: slide-in 1.2s ease both;
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+/* Side Objects Animation */
+.scale-in {
+  animation: scale-in 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
