@@ -5,3 +5,5 @@
 - Reviews Live Site URL :- [Live Site](https://reviews-singh.netlify.app/)
 
 - Accordion Live Site URL :- [Live Site](https://accordion-singh.netlify.app/)
+
+- Menu Live Site URL :- [Live Site](https://menu-singh.netlify.app/)
