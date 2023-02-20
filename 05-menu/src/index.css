@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-height: 100dvh;
+  font-family: "Roboto", sans-serif;
+}
+/* Main Heading  */
+.main-heading {
+  position: relative;
+  background: url(/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+}
+.main-heading::after {
+  inset: 0;
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.45)
+  );
+}
+/* Card Hover  */
+.card-container:hover .Pizza {
+  opacity: 1;
+  transform: translateX(0) rotate(-45deg);
+}
+/* Ripple  */
+.react-ripples {
+  border-radius: 100vmax;
+}
+/* All Animations  */
+.slide-in {
+  animation: slide-in 1.5s ease;
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.tracking-in {
+  animation: tracking-in 1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+@keyframes tracking-in {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Scrollbar for Chrome  */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  /* background: black; */
+  border-radius: 100vmax;
+  margin-block: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(253 224 71);
+  border-radius: 100vmax;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(250 204 21);
+}
+/* Scroll Bar for Mozilla  */
+@supports (scrollbar-color: yellow black) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(253 224 71) white;
+  }
+}
