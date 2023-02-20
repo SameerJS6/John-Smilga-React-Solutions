@@ -27,7 +27,7 @@ export default function Cards({ id, name, info, image, price, removeCard }) {
           <div className="tour | relative rounded-lg bg-white">
             <div className="image-wrapper | relative overflow-hidden rounded-t-lg ">
               <img
-                className="rounded-t-lg mx-auto aspect-square object-cover shadow-lg hover:scale-110 transition-all duration-[1s] ease-in-out"
+                className="w-full rounded-t-lg mx-auto aspect-square object-cover shadow-lg hover:scale-110 transition-all duration-[1s] ease-in-out"
                 src={image}
                 alt={name}
               />

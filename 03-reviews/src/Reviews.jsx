@@ -40,7 +40,7 @@ export default function Reviews() {
       <div className="main-container | grid gap-4 text-center p-8 rounded-xl shadow-lg transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-xl">
         <div className="image-section | relative rounded-full w-fit mx-auto hover:-translate-y-1 transition-all duration-500 ease-in-out drop-shadow-lg md:drop-shadow-md">
           <img
-            className="profile-image | max-w-[150px] rounded-[50%] aspect-square object-cover mx-auto"
+            className="profile-image | w-full max-w-[150px] rounded-[50%] aspect-square object-cover mx-auto"
             src={image}
             alt={`${name} Profile Picture`}
           />
