@@ -7,3 +7,5 @@
 - Accordion Live Site URL :- [Live Site](https://accordion-singh.netlify.app/)
 
 - Menu Live Site URL :- [Live Site](https://menu-singh.netlify.app/)
+
+- Tabs Live Site URL :- [Live Site](https://tabs-singh.netlify.app/)
