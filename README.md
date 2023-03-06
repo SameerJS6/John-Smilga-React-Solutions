@@ -9,3 +9,5 @@
 - Menu Live Site URL :- [Live Site](https://menu-singh.netlify.app/)
 
 - Tabs Live Site URL :- [Live Site](https://tabs-singh.netlify.app/)
+
+- Slider Live Site URL :- [Live Site](https://slider-singh.netlify.app/)
