@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  place-content: center;
+  color: #e6e2d9;
+  background-color: #1d1c16;
+  font-family: "Poppins", sans-serif;
+}
+.section-center {
+  width: 90vw;
+  height: 450px;
+  max-width: 800px;
+  border-radius: 1rem;
+  background: rgb(103 80 164 / 0.05);
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 0.2),
+    0px 2px 2px 0px rgb(0 0 0 / 0.14), 0px 1px 5px 0px rgb(0 0 0 / 0.12);
+}
+
+article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  padding: 1rem;
+  transition: all 500ms ease;
+}
+.ActiveSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+.PrevSlide {
+  transform: translateX(-100%);
+}
+.NextSlide {
+  transform: translateX(100%);
+}
+.none,
+.none-1 {
+  display: none;
+}
+@media (min-width: 600px) {
+  .section-center {
+    width: 550px;
+  }
+  .none {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .section-center {
+    width: 800px;
+  }
+  .none-1 {
+    display: block;
+  }
+  article {
+    padding: 1.5rem;
+  }
+}
+
+/* All the Animation  */
+.opa {
+  animation: opa 1.5s ease;
+}
+@keyframes opa {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.slide-in {
+  animation: slide-in 1.5s ease;
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.tracking-in {
+  animation: tracking-in 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@keyframes tracking-in {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-70px) translateY(-50px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
