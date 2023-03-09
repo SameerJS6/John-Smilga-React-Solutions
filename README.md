@@ -11,3 +11,5 @@
 - Tabs Live Site URL :- [Live Site](https://tabs-singh.netlify.app/)
 
 - Slider Live Site URL :- [Live Site](https://slider-singh.netlify.app/)
+
+- Dummy Text Generator Live Site URL :- [Live Site](https://dummy-text-generator-singh.netlify.app/)
