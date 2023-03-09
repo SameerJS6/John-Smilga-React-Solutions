@@ -1,0 +1,57 @@
+.tracking-in {
+  animation: tracking-in 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@keyframes tracking-in {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.tracking-in-bottom {
+  animation: tracking-in-bottom 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@keyframes tracking-in-bottom {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-50px) translateY(25px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slide-in 1s ease;
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.blink {
+  animation: blink 800ms linear infinite;
+}
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
