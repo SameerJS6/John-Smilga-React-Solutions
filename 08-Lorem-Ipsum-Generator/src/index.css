@@ -2,16 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background: white;
+}
+.darkMode {
+  --background: black;
+}
 body {
   display: grid;
   min-height: 100vh;
   min-height: 100dvh;
-  background-color: white;
   font-family: "Roboto", sans-serif;
+  background-color: var(--background);
+  transition: background-color 500ms ease, color 500ms ease;
 }
-.darkMode {
+/* .darkMode {
   background-color: black;
-}
+} */
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
