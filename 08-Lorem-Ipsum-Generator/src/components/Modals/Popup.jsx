@@ -1,5 +1,5 @@
 import React from "react";
-import "./Animation.css";
+import "../Animation.css";
 
 export default function Popup({ isError, handlePop, context }) {
   return (

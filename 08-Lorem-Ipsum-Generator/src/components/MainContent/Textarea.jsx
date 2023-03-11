@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Buttons from "./Buttons";
-import data from "../data";
+import Buttons from "../Buttons/Buttons";
+import data from "../../data";
 
 export default function Textarea({
   number,

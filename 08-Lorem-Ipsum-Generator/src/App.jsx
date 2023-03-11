@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import Herosection from "./components/Herosection";
-import Navbar from "./components/Navbar";
-import Notification from "./components/Notification";
-import Popup from "./components/Popup";
-import Textarea from "./components/Textarea";
+import Herosection from "./components/MainContent/Herosection";
+import Navbar from "./components/MainContent/Navbar";
+import Notification from "./components/Modals/Notification";
+import Popup from "./components/Modals/Popup";
+import Textarea from "./components/MainContent/Textarea";
 import { useRipple } from "./hook/useRipple";
 
 export default function App() {

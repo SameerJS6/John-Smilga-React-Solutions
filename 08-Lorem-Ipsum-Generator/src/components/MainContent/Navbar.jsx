@@ -1,5 +1,5 @@
 import React from "react";
-import Darkmode from "./Darkmode";
+import Darkmode from "../Darkmode/Darkmode";
 
 export default function Navbar({ themeRef }) {
   return (

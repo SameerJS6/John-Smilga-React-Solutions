@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import "./Animation.css";
+import React from "react";
+import "../Animation.css";
 
 export default function Notification({ isCopied, handleNoti }) {
   return (
