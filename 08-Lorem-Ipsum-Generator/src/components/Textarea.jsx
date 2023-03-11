@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Buttons from "./Buttons";
 import data from "../data";
-import Notification from "./Notification";
 
 export default function Textarea({
   number,
