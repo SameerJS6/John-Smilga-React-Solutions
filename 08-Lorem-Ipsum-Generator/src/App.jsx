@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Herosection from "./components/Herosection";
 import Navbar from "./components/Navbar";
 import Notification from "./components/Notification";
 import Popup from "./components/Popup";
 import Textarea from "./components/Textarea";
+import { useRipple } from "./hook/useRipple";
 
 export default function App() {
   const [isError, setIsError] = useState(false);
@@ -46,10 +47,21 @@ export default function App() {
   number < 0
     ? (context = `Tere baap ne ${number} paragraph generate, kiya tha kya kabhi, Chal aab peche jaa.`)
     : "";
+
+  // All the Ref for the Ripple Effect
+  const themebtnRef = useRef();
+  const copybtnRef = useRef();
+  const resetbtnRef = useRef();
+  const generatebtnRef = useRef();
+
+  useRipple(themebtnRef, { color: "lime" });
+  useRipple(copybtnRef, {});
+  useRipple(resetbtnRef, {});
+  useRipple(generatebtnRef, {});
   return (
     <main className="max-w-[1440px] mx-auto">
       <div data-overlay={isError ? "true" : "false"} className="section | p-4">
-        <Navbar />
+        <Navbar themeRef={themebtnRef} />
         <div className="my-8 sm:my-6 lg:my-12 xl:my-14 grid place-content-center">
           <Herosection />
           <Textarea
@@ -59,6 +71,10 @@ export default function App() {
             isCopied={setIsCopied}
             handlePop={handlePop}
             handleNoti={handleNoti}
+            // All the Button Refs
+            copyRef={copybtnRef}
+            resetRef={resetbtnRef}
+            generateRef={generatebtnRef}
           />
           <Popup
             number={number}

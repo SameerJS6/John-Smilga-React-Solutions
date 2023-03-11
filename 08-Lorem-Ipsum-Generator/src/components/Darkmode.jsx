@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function Darkmode() {
+export default function Darkmode({ themeRef }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -23,6 +23,7 @@ export default function Darkmode() {
   };
   return (
     <button
+      ref={themeRef}
       onClick={handleThemeChange}
       className="transition-all duration-[350ms] ease-in-out hover:bg-slate-50 hover:-translate-y-1 hover:scale-110 hover:shadow-md rounded-[50%] p-2"
     >

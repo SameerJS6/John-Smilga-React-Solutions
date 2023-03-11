@@ -8,6 +8,9 @@
 .darkMode {
   --background: black;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   display: grid;
   min-height: 100vh;
@@ -16,9 +19,6 @@ body {
   background-color: var(--background);
   transition: background-color 500ms ease, color 500ms ease;
 }
-/* .darkMode {
-  background-color: black;
-} */
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
@@ -192,4 +192,39 @@ input[type="number"] {
 .section[data-overlay="true"]::after {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* For Ripple Effect */
+.effect-container {
+  position: relative;
+  overflow: hidden;
+
+  --effect-duration: 1000ms;
+  --top: 0px;
+  --left: 0px;
+  --color: lime;
+  --width: 100px;
+  --height: 100px;
+}
+.effect-container::before {
+  content: "";
+  position: absolute;
+  opacity: 0.3;
+
+  top: var(--top);
+  left: var(--left);
+  width: var(--width);
+  height: var(--height);
+  border-radius: 50%;
+  transform: scale(0);
+  background: var(--color);
+}
+.effect-container.active::before {
+  animation: ripple var(--effect-duration) linear forwards;
+}
+@keyframes ripple {
+  to {
+    transform: scale(5);
+    opacity: 0;
+  }
 }

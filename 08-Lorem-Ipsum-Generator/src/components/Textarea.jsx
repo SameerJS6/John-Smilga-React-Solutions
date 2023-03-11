@@ -8,6 +8,9 @@ export default function Textarea({
   isError,
   isCopied,
   handlePop,
+  copyRef,
+  resetRef,
+  generateRef,
 }) {
   const [text, setText] = useState([]);
   const [show, setShow] = useState(true);
@@ -20,6 +23,7 @@ export default function Textarea({
   const handleSubmit = (e) => {
     e.preventDefault();
     let amount = parseInt(number);
+    if (amount === 0 || amount === "") setShow(true);
     if (amount <= 0 || amount > 50) {
       amount = 0;
       setShow(true);
@@ -63,6 +67,10 @@ export default function Textarea({
               setText={setText}
               setIsCopied={isCopied}
               setNumber={setNumber}
+              // All the Button Refs
+              copyRef={copyRef}
+              resetRef={resetRef}
+              generateRef={generateRef}
             />
           </div>
         </form>

@@ -7,6 +7,9 @@ export default function Buttons({
   setText,
   setIsCopied,
   setNumber,
+  copyRef,
+  resetRef,
+  generateRef,
 }) {
   const handleCopy = () => {
     copy(text);
@@ -21,6 +24,7 @@ export default function Buttons({
     <>
       <div className="flex flex-wrap gap-4 justify-center">
         <button
+          ref={generateRef}
           type="submit"
           className="flex gap-1 items-center rounded-lg p-4 font-medium bg-slate-100 text-slate-900 shadow-lg text-sm sm:text-base group transition-colors duration-300 hover:text-emerald-50 hover:bg-emerald-600"
         >
@@ -46,6 +50,7 @@ export default function Buttons({
           Generate
         </button>
         <button
+          ref={copyRef}
           type="reset"
           onClick={handleCopy}
           className="flex gap-1 items-center rounded-lg p-4 font-medium bg-slate-100 text-slate-900 shadow-lg text-sm sm:text-base group transition-colors duration-300 hover:text-blue-50 hover:bg-blue-600"
@@ -68,6 +73,7 @@ export default function Buttons({
         </button>
 
         <button
+          ref={resetRef}
           type="reset"
           onClick={handleReset}
           className="flex gap-1 items-center rounded-xl p-4 font-medium bg-slate-100 text-slate-900 shadow-lg text-sm sm:text-base group transition-all duration-500 hover:text-red-50 hover:bg-red-600"

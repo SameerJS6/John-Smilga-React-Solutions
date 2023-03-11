@@ -1,7 +1,7 @@
 import React from "react";
 import Darkmode from "./Darkmode";
 
-export default function Navbar() {
+export default function Navbar({ themeRef }) {
   return (
     <>
       <header className="flex items-center justify-between py-4 sm:px-6 sm:py-5 lg:px-12 lg:py-2 xl:px-24 xl:py-4">
@@ -20,7 +20,7 @@ export default function Navbar() {
               alt="Github Logo"
             />
           </a>
-          <Darkmode />
+          <Darkmode themeRef={themeRef} />
         </div>
       </header>
     </>
