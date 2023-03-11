@@ -23,9 +23,7 @@ export function useRipple(element, config) {
     const onClick = (e) => {
       element.current.classList.remove("active");
       applyStyles(e);
-      // setTimeout(() => {
       element.current.classList.add("active");
-      // }, 1);
     };
 
     applyContainer();
