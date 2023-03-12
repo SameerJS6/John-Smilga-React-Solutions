@@ -6,21 +6,21 @@ export default function Herosection() {
     <>
       <section>
         <div className="grid gap-4 text-center ">
-          <span className="rounded-[100vmax] bg-secondary text-onSecondary font-bold shadow text-sm w-fit px-5 py-2 mx-auto mb-4 transition-all duration-500">
+          <span className="tracking-in | rounded-[100vmax] bg-secondary text-onSecondary font-bold shadow text-sm w-fit px-5 py-2 mx-auto mb-4 transition-all duration-500">
             Introducing
           </span>
-          <h1 className="title-stroke border-style | overflow-hidden relative capitalize text-5xl sm:text-[5rem] lg:text-8xl font-bold px-1 py-4 sm:p-4 lg:p-5 lg:px-7 sm:w-fit sm:mx-auto">
-            dummy text
-          </h1>
-          <span className="capitalize text-5xl sm:text-[5rem] lg:text-7xl text-primary font-bold">
+          <div className="title-stroke border-style | overflow-hidden relative capitalize text-5xl sm:text-[5rem] lg:text-8xl font-bold px-1 py-4 sm:p-4 lg:p-5 lg:px-7 sm:w-fit sm:mx-auto">
+            <h1 className="slide-in">dummy text</h1>
+          </div>
+          <span className="tracking-in | capitalize text-5xl sm:text-[5rem] lg:text-7xl text-primary font-bold">
             generator<span className="blink">|</span>
           </span>
-          <p className="text-xs sm:text-sm xl:text-base font-medium text-onBackground sm:w-[45ch] mx-auto">
+          <p className="slide-in | text-xs sm:text-sm xl:text-base font-medium text-onBackground sm:w-[45ch] mx-auto">
             Lorem ipsum is placeholder text commonly used in the graphic, print,
             & publishing industries for previewing layouts & visual mockups.
           </p>
           <a
-            className="flex gap-2 items-center rounded-full px-6 py-2 font-medium bg-primary text-onPrimary shadow-md text-sm sm:text-lg group transition-all duration-500 ease-in-out w-fit mx-auto active:rounded-2xl hover:shadow-elevation1 hover:scale-105"
+            className="slide-in | flex gap-2 items-center rounded-full px-6 py-2 font-medium bg-primary text-onPrimary shadow-md text-sm sm:text-lg group transition-all duration-500 ease-in-out w-fit mx-auto active:rounded-2xl hover:shadow-elevation1 hover:scale-105"
             href="#generateSection"
           >
             <svg

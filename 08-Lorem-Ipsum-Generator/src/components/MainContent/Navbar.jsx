@@ -4,7 +4,7 @@ import Darkmode from "../Darkmode/Darkmode";
 export default function Navbar({ themeRef }) {
   return (
     <>
-      <header className="flex items-center justify-between py-4 sm:px-6 sm:py-5 lg:px-12 lg:py-2 xl:px-24 xl:py-4">
+      <header className="opa | flex items-center justify-between py-4 sm:px-6 sm:py-5 lg:px-12 lg:py-2 xl:px-24 xl:py-4">
         <div className="capitalize font-bold overflow-hidden cursor-default text-xl sm:text-2xl text-onBackground">
           <span className="">dummy text...</span>
         </div>
@@ -14,11 +14,6 @@ export default function Navbar({ themeRef }) {
             href="https://github.com/SameerJS6"
             target={"_blank"}
           >
-            {/* <img
-              className="w-5 sm:w-6"
-              src="/github-mark.png"
-              alt="Github Logo"
-            /> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"

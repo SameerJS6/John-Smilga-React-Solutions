@@ -55,3 +55,14 @@
     opacity: 1;
   }
 }
+.opa {
+  animation: opacity 1s ease;
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
