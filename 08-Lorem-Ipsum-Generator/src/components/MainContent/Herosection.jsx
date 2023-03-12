@@ -9,7 +9,7 @@ export default function Herosection() {
           <span className="rounded-[100vmax] bg-green-50 text-green-900 font-bold shadow text-sm w-fit px-5 py-2 mx-auto mb-4">
             Introducing
           </span>
-          <h1 className="title-stroke | border-2 sm:border-[3px] lg:border-4 border-dashed border-green-900 capitalize text-5xl sm:text-[5rem] lg:text-8xl font-bold px-1 py-4 sm:p-4 lg:p-5 lg:px-7 sm:w-fit sm:mx-auto">
+          <h1 className="title-stroke border-style | overflow-hidden relative capitalize text-5xl sm:text-[5rem] lg:text-8xl font-bold px-1 py-4 sm:p-4 lg:p-5 lg:px-7 sm:w-fit sm:mx-auto">
             dummy text
           </h1>
           <span className="capitalize text-5xl sm:text-[5rem] lg:text-7xl text-green-900 font-bold">
@@ -41,7 +41,7 @@ export default function Herosection() {
           </a>
         </div>
 
-        <article className="grid gap-5 text-center px-3 py-5 sm:px-4 sm:py-8 border-2 sm:border-4 border-dashed border-green-900 max-w-[900px] my-16 xl:my-32">
+        <article className="border-style | relative overflow-hidden grid gap-5 text-center px-3 py-5 sm:px-4 sm:py-8 max-w-[900px] my-16 xl:my-32">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl text-green-900 font-bold">
             What is Lorem Ipsum??
           </h2>

@@ -4,9 +4,13 @@
 
 :root {
   --background: white;
+  --github: #24292f;
+
+  --font: "Roboto", sans-serif;
 }
 .darkMode {
   --background: black;
+  --github: white;
 }
 html {
   scroll-behavior: smooth;
@@ -15,7 +19,7 @@ body {
   display: grid;
   min-height: 100vh;
   min-height: 100dvh;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font);
   background-color: var(--background);
   transition: background-color 500ms ease, color 500ms ease;
 }
@@ -123,8 +127,10 @@ input[type="number"] {
 }
 
 /* Title Stroke  */
+
 .title-stroke {
   --stroke: 1px;
+
   color: transparent;
   transition: all 500ms ease;
   -webkit-text-stroke: var(--stroke) #064e3b;
@@ -133,9 +139,22 @@ input[type="number"] {
   color: #064e3b;
   -webkit-text-stroke: var(--stroke) transparent;
 }
+.border-style:before {
+  --border-size: 5px;
+  --border-distance: -3px;
+
+  content: "";
+  position: absolute;
+  inset: var(--border-distance);
+  border: var(--border-size) dashed rgb(20 83 45);
+}
 @media (min-width: 600px) {
   .title-stroke {
     --stroke: 2px;
+  }
+  .border-style::before {
+    --border-size: 10px;
+    --border-distance: -7px;
   }
 }
 .generate {

@@ -74,7 +74,7 @@ export default function Textarea({
             />
           </div>
         </form>
-        <div className="textarea | relative border-[3px] border-dashed border-green-900 rounded-lg h-80 shadow my-4 focus:outline-transparent focus-visible:outline-4 focus-visible:outline-slate-500  focus-visible:rounded-lg overflow-auto">
+        <div className="textarea | relative bg-slate-50 rounded-lg h-80 shadow-md my-4 focus:outline-transparent focus-visible:outline-4 focus-visible:outline-slate-500  focus-visible:rounded-lg overflow-auto">
           <article
             className="grid gap-4 w-full font-medium p-4 sm:p-5 border-none text-slate-800 bg-transparent sm:leading-relaxed text-justify"
             spellCheck="false"
