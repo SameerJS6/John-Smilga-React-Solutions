@@ -6,7 +6,7 @@ export default function Notification({ isCopied, handleNoti }) {
     <>
       <div
         data-line={isCopied ? "true" : "false"}
-        className={`notifications | fixed top-12 right-4 sm:top-16 sm:right-8 w-[250px] sm:w-[300px] flex items-center justify-between bg-hover2 shadow-md px-3 py-2 sm:px-4 sm:py-3 rounded-xl transition-all duration-500 ease-in-out overflow-hidden text-onBackground ${
+        className={`notifications | fixed top-12 right-4 sm:top-16 sm:right-8 w-[250px] sm:w-[300px] flex items-center justify-between bg-hover2 shadow-md px-3 py-2 sm:px-4 sm:py-3 rounded-xl transition-all duration-500 ease-in-out overflow-hidden text-onBackground backdrop-blur-lg ${
           isCopied
             ? "translate-y-0 opacity-100 scale-100"
             : "translate-y-24 opacity-0 scale-0 pointer-events-none"
