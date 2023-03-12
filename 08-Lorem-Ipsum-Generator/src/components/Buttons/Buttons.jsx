@@ -34,7 +34,7 @@ export default function Buttons({
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-6 h-6 group-hover:animate-spin"
           >
             <path
               strokeLinecap="round"
@@ -61,7 +61,7 @@ export default function Buttons({
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5 sm:w-6 sm:h-6 transition-colors duration-300 group-hover:stroke-current "
+            className="w-5 h-5 sm:w-6 sm:h-6 group-hover:animate-bounce "
           >
             <path
               strokeLinecap="round"
@@ -84,7 +84,7 @@ export default function Buttons({
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5 sm:w-6 sm:h-6 transition-colors duration-500 group-hover:stroke-current "
+            className="w-5 h-5 sm:w-6 sm:h-6 group-hover:animate-bounce "
           >
             <path
               strokeLinecap="round"
