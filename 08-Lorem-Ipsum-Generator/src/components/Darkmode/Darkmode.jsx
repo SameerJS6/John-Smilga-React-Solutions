@@ -25,7 +25,7 @@ export default function Darkmode({ themeRef }) {
     <button
       ref={themeRef}
       onClick={handleThemeChange}
-      className="transition-all duration-[350ms] ease-in-out hover:bg-slate-50 hover:-translate-y-1 hover:scale-110 hover:shadow-md rounded-[50%] p-2"
+      className="transition-all duration-[350ms] ease-in-out hover:bg-hover hover:-translate-y-1 hover:scale-110 rounded-[50%] p-2"
     >
       {isDark && (
         <svg
@@ -34,7 +34,7 @@ export default function Darkmode({ themeRef }) {
           height="24px"
           viewBox="0 0 24 24"
           width="24px"
-          fill="limegreen"
+          fill="var(--md-sys-color-on-background)"
           className="w-5 sm:w-6 h-5 sm:h-6"
         >
           <rect fill="none" height="24" width="24" />

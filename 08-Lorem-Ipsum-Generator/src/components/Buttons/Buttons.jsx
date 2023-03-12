@@ -26,7 +26,7 @@ export default function Buttons({
         <button
           ref={generateRef}
           type="submit"
-          className="flex gap-1 items-center rounded-lg p-4 font-medium bg-slate-100 text-slate-900 shadow-lg text-sm sm:text-base group transition-colors duration-300 hover:text-emerald-50 hover:bg-emerald-600"
+          className="flex gap-1 items-center rounded-full px-4 py-3 font-medium bg-primary text-onPrimary shadow-elevation1 text-sm sm:text-base group transition-all duration-300 hover:shadow-elevation2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ export default function Buttons({
           ref={copyRef}
           type="reset"
           onClick={handleCopy}
-          className="flex gap-1 items-center rounded-lg p-4 font-medium bg-slate-100 text-slate-900 shadow-lg text-sm sm:text-base group transition-colors duration-300 hover:text-blue-50 hover:bg-blue-600"
+          className="flex gap-1 items-center rounded-full px-4 py-3 font-medium bg-secondary text-onSecondary shadow-none text-sm sm:text-base group transition-all duration-300 hover:shadow-elevation1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ export default function Buttons({
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5 sm:w-6 sm:h-6 transition-colors duration-300 group-hover:stroke-blue-50 "
+            className="w-5 h-5 sm:w-6 sm:h-6 transition-colors duration-300 group-hover:stroke-current "
           >
             <path
               strokeLinecap="round"
@@ -76,7 +76,7 @@ export default function Buttons({
           ref={resetRef}
           type="reset"
           onClick={handleReset}
-          className="flex gap-1 items-center rounded-xl p-4 font-medium bg-slate-100 text-slate-900 shadow-lg text-sm sm:text-base group transition-all duration-500 hover:text-red-50 hover:bg-red-600"
+          className="flex gap-1 items-center rounded-full px-4 py-3 font-medium text-error shadow-none text-sm sm:text-base group transition-all duration-500 hover:shadow-elevation1 hover:bg-hoverError"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ export default function Buttons({
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5 sm:w-6 sm:h-6 transition-colors duration-500 group-hover:stroke-red-50 "
+            className="w-5 h-5 sm:w-6 sm:h-6 transition-colors duration-500 group-hover:stroke-current "
           >
             <path
               strokeLinecap="round"

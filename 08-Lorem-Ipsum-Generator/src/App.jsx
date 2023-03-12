@@ -5,6 +5,7 @@ import Notification from "./components/Modals/Notification";
 import Popup from "./components/Modals/Popup";
 import Textarea from "./components/MainContent/Textarea";
 import { useRipple } from "./hook/useRipple";
+import Footer from "./components/Footer/Footer";
 
 export default function App() {
   const [isError, setIsError] = useState(false);
@@ -54,15 +55,21 @@ export default function App() {
   const resetbtnRef = useRef();
   const generatebtnRef = useRef();
 
-  useRipple(themebtnRef, { color: "lime" });
-  useRipple(copybtnRef, {});
-  useRipple(resetbtnRef, {});
-  useRipple(generatebtnRef, {});
+  useRipple(themebtnRef, {});
+  useRipple(copybtnRef, {
+    color: "rgb(var(--md-sys-color-primary) / 0.75)",
+  });
+  useRipple(resetbtnRef, {
+    color: "rgb(var(--md-sys-color-error) / 0.5)",
+  });
+  useRipple(generatebtnRef, {
+    color: "var(--md-sys-color-on-background)",
+  });
   return (
     <main className="max-w-[1440px] mx-auto">
       <div data-overlay={isError ? "true" : "false"} className="section | p-4">
         <Navbar themeRef={themebtnRef} />
-        <div className="my-8 sm:my-6 lg:my-12 xl:my-14 grid place-content-center">
+        <div className="my-8 mb-2 sm:my-6 sm:mb-2 lg:my-12 lg:mb-4 xl:my-14 xl:mb-2 grid place-content-center">
           <Herosection />
           <Textarea
             number={number}
@@ -83,6 +90,7 @@ export default function App() {
             handlePop={handlePop}
           />
           <Notification isCopied={isCopied} handleNoti={handleNoti} />
+          <Footer />
         </div>
       </div>
     </main>

@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 
 export function useRipple(element, config) {
-  const { duration = 1000, color = "white", size = 100 } = config;
+  const {
+    duration = 1000,
+    color = "rgb(var(--md-sys-color-primary) / 1)",
+    size = 100,
+  } = config;
   useEffect(() => {
     const applyContainer = () => {
       element.current.classList.add("effect-container");

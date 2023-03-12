@@ -6,21 +6,21 @@ export default function Herosection() {
     <>
       <section>
         <div className="grid gap-4 text-center ">
-          <span className="rounded-[100vmax] bg-green-50 text-green-900 font-bold shadow text-sm w-fit px-5 py-2 mx-auto mb-4">
+          <span className="rounded-[100vmax] bg-secondary text-onSecondary font-bold shadow text-sm w-fit px-5 py-2 mx-auto mb-4 transition-all duration-500">
             Introducing
           </span>
           <h1 className="title-stroke border-style | overflow-hidden relative capitalize text-5xl sm:text-[5rem] lg:text-8xl font-bold px-1 py-4 sm:p-4 lg:p-5 lg:px-7 sm:w-fit sm:mx-auto">
             dummy text
           </h1>
-          <span className="capitalize text-5xl sm:text-[5rem] lg:text-7xl text-green-900 font-bold">
+          <span className="capitalize text-5xl sm:text-[5rem] lg:text-7xl text-primary font-bold">
             generator<span className="blink">|</span>
           </span>
-          <p className="text-xs sm:text-sm xl:text-base font-medium text-green-900 sm:w-[45ch] mx-auto">
+          <p className="text-xs sm:text-sm xl:text-base font-medium text-onBackground sm:w-[45ch] mx-auto">
             Lorem ipsum is placeholder text commonly used in the graphic, print,
             & publishing industries for previewing layouts & visual mockups.
           </p>
           <a
-            className="flex gap-2 items-center rounded-lg px-6 py-2 font-medium bg-green-900 text-green-50 shadow-md text-sm sm:text-lg group transition-all duration-300 ease-in-out w-fit mx-auto active:rounded-2xl  hover:shadow-lg hover:scale-105"
+            className="flex gap-2 items-center rounded-full px-6 py-2 font-medium bg-primary text-onPrimary shadow-md text-sm sm:text-lg group transition-all duration-500 ease-in-out w-fit mx-auto active:rounded-2xl hover:shadow-elevation1 hover:scale-105"
             href="#generateSection"
           >
             <svg
@@ -34,18 +34,18 @@ export default function Herosection() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M15 15l-6 6m0 0l-6-6m6 6V9a6 6 0 0112 0v3"
+                d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
               />
             </svg>
             Generate
           </a>
         </div>
 
-        <article className="border-style | relative overflow-hidden grid gap-5 text-center px-3 py-5 sm:px-4 sm:py-8 max-w-[900px] my-16 xl:my-32">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-green-900 font-bold">
+        <article className="relative overflow-hidden grid gap-5 text-center px-3 py-5 sm:px-4 sm:py-8 max-w-[900px] my-16 xl:my-32 bg-hover2 rounded-xl bg-primaryHover">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-primary font-bold">
             What is Lorem Ipsum??
           </h2>
-          <div className="grid gap-4 font-medium text-xs lg:text-sm xl:text-base">
+          <div className="grid gap-4 font-medium text-xs lg:text-sm xl:text-base text-onBackground">
             <p>
               Lorem ipsum, or lipsum as it is sometimes known, is dummy text
               used in laying out print, graphic or web designs. The passage is

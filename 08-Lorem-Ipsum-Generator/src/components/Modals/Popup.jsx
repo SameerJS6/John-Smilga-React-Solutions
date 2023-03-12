@@ -6,7 +6,7 @@ export default function Popup({ isError, handlePop, context }) {
     <>
       <div
         data-bar={isError ? "true" : "false"}
-        className={`popup | fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] grid gap-6 justify-center bg-slate-50 rounded-2xl shadow-xl text-center p-4 sm:p-8 transition-all duration-500 hover:shadow-2xl ease-in-out w-[260px] min-[320px]:w-[290px] min-[370px]:w-[350px] sm:w-[500px] overflow-hidden ${
+        className={`popup | fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] grid gap-6 justify-center bg-onError text-onBackground rounded-2xl shadow-xl text-center p-4 sm:p-8 transition-all duration-500 hover:shadow-2xl ease-in-out w-[260px] min-[320px]:w-[290px] min-[370px]:w-[350px] sm:w-[500px] overflow-hidden ${
           isError
             ? "scale-100 translate-y-0 opacity-100 z-10"
             : "scale-0 translate-y-8 opacity-0"
@@ -15,14 +15,14 @@ export default function Popup({ isError, handlePop, context }) {
         <div
           className={`${
             isError ? "slide-in" : ""
-          } rounded-[50%] bg-red-200 p-4 w-fit mx-auto shadow`}
+          } rounded-[50%] bg-hoverError p-4 w-fit mx-auto shadow`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke="rgb(220 38 38)"
+            stroke="rgb(var(--md-sys-color-error))"
             className="w-6 h-6"
           >
             <path

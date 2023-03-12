@@ -38,7 +38,7 @@ export default function Textarea({
         id="generateSection"
         className="max-w-[800px] grid gap-4 mx-auto scroll-smooth"
       >
-        <h2 className="font-bold text-green-900 text-2xl sm:text-3xl mb-2 sm:mb-5 lg:mb-6 text-center">
+        <h2 className="font-bold text-primary text-center text-2xl sm:text-3xl mb-2 sm:mb-5 lg:mb-6 mx-auto bg-primaryHover rounded-[100vmax] px-6 py-4 sm:px-8 w-fit transition-all duration-500">
           Dummy Text Generator...
         </h2>
         <form onSubmit={handleSubmit}>
@@ -51,7 +51,7 @@ export default function Textarea({
             </label> */}
             <div className="flex flex-col justify-center sm:flex-row gap-4">
               <input
-                className="p-2 py-3 font-medium rounded-lg border-[3px] border-slate-300 text-lg w-fit transition-all duration-500 ease-in-out hover:shadow-md focus-visible:shadow-lg focus-visible:outline-green-800 focus-visible:outline-offset-0 mx-auto sm:mx-0"
+                className="p-2 py-3 font-medium rounded-lg border border-inputBorder text-onBackground text-lg w-fit bg-transparent transition-all duration-500 ease-in-out hover:border-hoverInputBorder focus:outline-none focus:border-primary focus-visible:outline-none mx-auto sm:mx-0"
                 type="number"
                 name="amount"
                 disabled={isError}
@@ -74,9 +74,9 @@ export default function Textarea({
             />
           </div>
         </form>
-        <div className="textarea | relative bg-slate-50 rounded-lg h-80 shadow-md my-4 focus:outline-transparent focus-visible:outline-4 focus-visible:outline-slate-500  focus-visible:rounded-lg overflow-auto">
+        <div className="textarea | relative bg-tertiary  text-onTertiary rounded-xl h-80 shadow-md my-4 focus:outline-transparent focus-visible:outline-4 focus-visible:outline-slate-500  focus-visible:rounded-lg overflow-auto">
           <article
-            className="grid gap-4 w-full font-medium p-4 sm:p-5 border-none text-slate-800 bg-transparent sm:leading-relaxed text-justify"
+            className="grid gap-4 w-full font-medium p-4 sm:p-5 border-none bg-transparent sm:leading-relaxed text-justify"
             spellCheck="false"
             placeholder={"Generate your text now.."}
           >
