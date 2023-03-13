@@ -48,7 +48,7 @@ export default function Textarea({
         <Fade top duration={1500}>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-              <div className="relative flex flex-col justify-center sm:flex-row gap-4 mx-auto">
+              <div className="relative flex flex-col justify-center sm:flex-row gap-4">
                 <input
                   className="generate-input | max-[300px]:w-60 w-[17rem] px-6 py-4 font-medium rounded-full border-2 border-inputBorder outline-none text-onBackground text-lg bg-transparent transition-all duration-300 group caret-primary hover:border- focus:border-primary"
                   type="number"

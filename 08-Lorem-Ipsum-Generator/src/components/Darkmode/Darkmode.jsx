@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 
 export default function Darkmode({ themeRef }) {
   const [isDark, setIsDark] = useState(false);
-
+  // This only run for once, only on startup
   useEffect(() => {
+    // Gettin the theme value from localStorage & Checking if the value is equal to dark, if is then it sets, setIsDark(true), As it satisfy the given condition
     const localTheme = window.localStorage.getItem("theme");
     setIsDark(localTheme === "dark");
   }, []);
-
+  // This useEffect is checking, if isDark is true or not, and if it is then add the darkMode class to the body or remove it
   useEffect(() => {
     if (isDark) {
       document.body.classList.add("darkMode");
@@ -15,7 +16,7 @@ export default function Darkmode({ themeRef }) {
       document.body.classList.remove("darkMode");
     }
   }, [isDark]);
-
+  // This is the onClick function, which checks if isDark is true or false, and updates the value in localStorage && also toggle the isDark
   const handleThemeChange = () => {
     const newTheme = isDark ? "light" : "dark";
     window.localStorage.setItem("theme", newTheme);

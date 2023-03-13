@@ -68,12 +68,6 @@ body {
   background-color: var(--background);
   transition: background-color 500ms ease, color 500ms ease;
 }
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-input[type="number"] {
-  -moz-appearance: textfield;
-}
 
 /* Scrollbar for Body  */
 ::-webkit-scrollbar {
@@ -94,8 +88,8 @@ input[type="number"] {
     scrollbar-width: thin;
   }
 }
-/* Scrollbar for TextArea  */
 
+/* Scrollbar for TextArea  */
 .textarea::-webkit-scrollbar {
   width: 5px;
   border-radius: 100vmax;
@@ -116,65 +110,7 @@ input[type="number"] {
   }
 }
 
-/* Go Back Hover Animations  */
-.btn {
-  overflow: hidden;
-  color: var(--on-background);
-  background-color: rgb(var(--primary-container));
-}
-
-.btn:hover > span > span {
-  animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
-}
-
-@keyframes MoveUpInitial {
-  to {
-    transform: translate3d(0, -105%, 0);
-  }
-}
-
-@keyframes MoveUpEnd {
-  from {
-    transform: translate3d(0, 100%, 0);
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.btn::before {
-  content: "";
-  background: rgb(var(--primary-container));
-  transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
-  transform-origin: 100% 50%;
-}
-
-.btn:hover::before {
-  transform: scale3d(0, 1, 1);
-  transform-origin: 0% 50%;
-}
-
-.btn-2 {
-  pointer-events: auto;
-  cursor: pointer;
-  border: none;
-  position: relative;
-  display: inline-block;
-  background: rgb(var(--tertiary-container));
-}
-
-.btn-2::before,
-.btn-2::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 /* Title Stroke  */
-
 .title-stroke {
   --stroke: 1px;
 
@@ -204,9 +140,82 @@ input[type="number"] {
     --border-distance: -7px;
   }
 }
-.generate {
-  scroll-behavior: smooth;
+
+/* Input Styling for removing the input:number arrows */
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* For Input Focus Animation */
+.generate-input:hover {
+  border-color: rgb(var(--on-surface-rgb));
+}
+.generate-input:focus + .generate-label > span {
+  font-size: 14px;
+  color: rgb(var(--primary));
+}
+.generate-input:focus + .generate-label,
+.generate-input:not(:placeholder-shown) + .generate-label,
+.generate-input:not(:placeholder-shown) + .generate-label > span {
+  top: 0;
+  left: 0.75rem;
+  font-size: 14px;
+}
+
+/* All the Popup & Notifications related Styling */
+
+/* Go Back Hover Animations */
+.btn {
+  overflow: hidden;
+  color: var(--on-background);
+  background-color: rgb(var(--primary-container));
+}
+.btn:hover > span > span {
+  animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+}
+@keyframes MoveUpInitial {
+  to {
+    transform: translate3d(0, -105%, 0);
+  }
+}
+@keyframes MoveUpEnd {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.btn::before {
+  content: "";
+  background: rgb(var(--primary-container));
+  transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+  transform-origin: 100% 50%;
+}
+.btn:hover::before {
+  transform: scale3d(0, 1, 1);
+  transform-origin: 0% 50%;
+}
+.btn-2 {
+  pointer-events: auto;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  display: inline-block;
+  background: rgb(var(--tertiary-container));
+}
+.btn-2::before,
+.btn-2::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Loading-Bar Styles  */
 .popup[data-bar="false"]::after,
 .notifications[data-line="false"]::after,
@@ -293,18 +302,4 @@ input[type="number"] {
     transform: scale(5);
     opacity: 0;
   }
-}
-.generate-input:hover {
-  border-color: rgb(var(--on-surface-rgb));
-}
-.generate-input:focus + .generate-label > span {
-  font-size: 14px;
-  color: rgb(var(--primary));
-}
-.generate-input:focus + .generate-label,
-.generate-input:not(:placeholder-shown) + .generate-label,
-.generate-input:not(:placeholder-shown) + .generate-label > span {
-  top: 0;
-  left: 0.75rem;
-  font-size: 14px;
 }
