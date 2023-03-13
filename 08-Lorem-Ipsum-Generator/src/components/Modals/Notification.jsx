@@ -22,7 +22,7 @@ export default function Notification({ isCopied, handleNoti }) {
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke="var(--md-sys-color-on-background)"
+            stroke="var(--on-background)"
             className="w-7 h-7"
           >
             <path

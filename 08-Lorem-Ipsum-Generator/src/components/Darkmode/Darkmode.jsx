@@ -34,7 +34,7 @@ export default function Darkmode({ themeRef }) {
           height="24px"
           viewBox="0 0 24 24"
           width="24px"
-          fill="var(--md-sys-color-on-background)"
+          fill="var(--on-background)"
           className="w-5 sm:w-6 h-5 sm:h-6"
         >
           <rect fill="none" height="24" width="24" />

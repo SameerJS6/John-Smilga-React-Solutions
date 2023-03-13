@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export function useRipple(element, config) {
   const {
     duration = 1000,
-    color = "rgb(var(--md-sys-color-primary) / 1)",
+    color = "rgb(var(--primary) / 1)",
     size = 100,
   } = config;
   useEffect(() => {

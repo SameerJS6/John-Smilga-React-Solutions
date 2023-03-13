@@ -22,7 +22,7 @@ export default function Popup({ isError, handlePop, context }) {
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke="rgb(var(--md-sys-color-error))"
+            stroke="rgb(var(--error))"
             className="w-6 h-6"
           >
             <path

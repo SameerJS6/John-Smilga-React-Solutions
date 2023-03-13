@@ -6,6 +6,7 @@ import Popup from "./components/Modals/Popup";
 import Textarea from "./components/MainContent/Textarea";
 import { useRipple } from "./hook/useRipple";
 import Footer from "./components/Footer/Footer";
+import Fade from "react-reveal/Fade";
 
 export default function App() {
   const [isError, setIsError] = useState(false);
@@ -57,13 +58,13 @@ export default function App() {
 
   useRipple(themebtnRef, {});
   useRipple(copybtnRef, {
-    color: "rgb(var(--md-sys-color-primary) / 0.75)",
+    color: "rgb(var(--primary) / 0.75)",
   });
   useRipple(resetbtnRef, {
-    color: "rgb(var(--md-sys-color-error) / 0.5)",
+    color: "rgb(var(--error) / 0.5)",
   });
   useRipple(generatebtnRef, {
-    color: "var(--md-sys-color-on-background)",
+    color: "var(--on-background)",
   });
   return (
     <main className="max-w-[1440px] mx-auto">
@@ -83,6 +84,9 @@ export default function App() {
             resetRef={resetbtnRef}
             generateRef={generatebtnRef}
           />
+          <Fade bottom>
+            <Footer />
+          </Fade>
           <Popup
             number={number}
             context={context}
@@ -90,7 +94,6 @@ export default function App() {
             handlePop={handlePop}
           />
           <Notification isCopied={isCopied} handleNoti={handleNoti} />
-          <Footer />
         </div>
       </div>
     </main>
