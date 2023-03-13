@@ -41,30 +41,32 @@ export default function Textarea({
         className="max-w-[800px] grid gap-4 mx-auto scroll-smooth"
       >
         <Reveal effect="tracking-in">
-          <h2 className="font-bold text-primary text-center text-2xl sm:text-3xl mb-2 sm:mb-5 lg:mb-6 mx-auto bg-primaryHover rounded-[100vmax] px-6 py-4 sm:px-8 w-fit transition-all duration-500">
+          <h2 className="font-bold text-primary text-center text-2xl sm:text-3xl mb-4 sm:mb-5 lg:mb-6 mx-auto bg-primaryHover rounded-[100vmax] px-6 py-4 sm:px-8 w-fit transition-all duration-500">
             Dummy Text Generator...
           </h2>
         </Reveal>
         <Fade top duration={1500}>
           <form onSubmit={handleSubmit}>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-              {/* <label
-              htmlFor="amount"
-              className="capitalize text-base font-medium text-slate-800 text-center sm:hidden"
-            >
-              <span>How many paragraphs?</span>
-            </label> */}
-              <div className="flex flex-col justify-center sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+              <div className="relative flex flex-col justify-center sm:flex-row gap-4 mx-auto">
                 <input
-                  className="p-2 py-3 font-medium rounded-lg border border-inputBorder text-onBackground text-lg w-fit bg-transparent transition-all duration-500 ease-in-out hover:border-hoverInputBorder focus:outline-none focus:border-primary focus-visible:outline-none mx-auto sm:mx-0"
+                  className="generate-input | max-[300px]:w-60 w-[17rem] px-6 py-4 font-medium rounded-full border-2 border-inputBorder outline-none text-onBackground text-lg bg-transparent transition-all duration-300 group caret-primary hover:border- focus:border-primary"
                   type="number"
                   name="amount"
                   disabled={isError}
                   value={number}
                   pattern="[0=9]"
-                  placeholder="Enter paragraphs count"
+                  placeholder=" "
                   onChange={(e) => setNumber(e.target.value)}
                 />
+                <label
+                  className="generate-label | absolute left-6 top-1/2 -translate-y-1/2 font-medium transition-all duration-300 pointer-events-none group-focus:text-primary group-focus:text-xs"
+                  htmlFor=""
+                >
+                  <span className="p-2 text-onBackground bg-[var(--background)] rounded-full transition-all duration-300 text-base">
+                    Enter Paragraphs Count
+                  </span>
+                </label>
               </div>
               <Buttons
                 text={text}

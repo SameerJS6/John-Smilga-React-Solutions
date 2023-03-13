@@ -294,3 +294,17 @@ input[type="number"] {
     opacity: 0;
   }
 }
+.generate-input:hover {
+  border-color: rgb(var(--on-surface-rgb));
+}
+.generate-input:focus + .generate-label > span {
+  font-size: 14px;
+  color: rgb(var(--primary));
+}
+.generate-input:focus + .generate-label,
+.generate-input:not(:placeholder-shown) + .generate-label,
+.generate-input:not(:placeholder-shown) + .generate-label > span {
+  top: 0;
+  left: 0.75rem;
+  font-size: 14px;
+}
