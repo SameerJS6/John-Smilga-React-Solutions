@@ -8,3 +8,4 @@
 1. Dummy Text Generator Live Site URL :- [Live Site](https://dummy-text-generator-singh.netlify.app/)
 1. Colors Generator Live Site URL :- [Live Site](https://color-generator-singh.netlify.app/)
 1. Grocery Bud Todo Live Site URL :- [Live Site](https://grocery-bud-singh.netlify.app/)
+1. Navbar Live Site URL :- [Live Site](https://navbar1-singh.netlify.app/)
