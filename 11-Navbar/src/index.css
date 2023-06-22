@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+.linkContainer {
+  height: 0;
+  overflow: hidden;
+  transition: all 350ms ease-in-out;
+}
+@media (min-width: 639px) {
+  .linkContainer {
+    height: auto !important;
+  }
+}
