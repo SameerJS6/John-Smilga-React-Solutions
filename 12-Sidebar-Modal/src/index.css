@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply grid min-h-[100dvh] place-content-center font-Poppins;
+}
+.bg-overlay::after {
+  @apply absolute inset-0 bg-gradient-to-b from-[#0000001a] to-[#000000d5] opacity-0 transition-all duration-300 ease-in-out content-[""];
+}
+.show-overlay::after {
+  @apply opacity-100;
+}
