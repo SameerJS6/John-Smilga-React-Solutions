@@ -9,3 +9,4 @@
 1. Colors Generator Live Site URL :- [Live Site](https://color-generator-singh.netlify.app/)
 1. Grocery Bud Todo Live Site URL :- [Live Site](https://grocery-bud-singh.netlify.app/)
 1. Navbar Live Site URL :- [Live Site](https://navbar1-singh.netlify.app/)
+1. Sidebar & Modal Live Site URL :- [Live Site](https://sidebar-modal-singh.netlify.app/)
