@@ -1,21 +1,30 @@
 import React from "react";
 import useRipple from "use-ripple-hook";
 import { links, social } from "../data";
+import { useGlobalContext } from "../context/Context";
 
 export default function Sidebar() {
   const [ripple, event] = useRipple({ color: "#0000001d", duration: 700 });
+  const { showSidebar, CloseSidebar } = useGlobalContext();
   return (
-    <aside className="fixed left-0 top-0 z-10 flex h-[100vh] w-[90%] max-w-[350px] flex-col bg-white shadow-2xl ">
+    <aside
+      className={`fixed left-0 top-0 z-10 flex h-[100vh] w-[90%] max-w-[350px] flex-col bg-white shadow-2xl transition-all duration-500 ease-in-out ${
+        showSidebar
+          ? "visible translate-x-0 opacity-100"
+          : "invisible -translate-x-8 opacity-0"
+      }`}
+    >
       <div className="flex items-center justify-between py-3 pl-5 pr-2">
         <h1 className="text-4xl">Sameer</h1>
         <button
           ref={ripple}
           onMouseDown={event}
+          onClick={CloseSidebar}
           className="aspect-square rounded-full p-3 transition-all duration-300 ease-in-out hover:bg-slate-100 hover:shadow-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            enable-background="new 0 0 24 24"
+            enableBackground="new 0 0 24 24"
             height="32px"
             viewBox="0 0 24 24"
             width="32px"
@@ -27,7 +36,7 @@ export default function Sidebar() {
         </button>
       </div>
 
-      <nav className="flex h-full flex-col justify-between pb-12 pt-4">
+      <nav className="flex h-full flex-col justify-between pb-20 pt-4 sm:pb-12">
         <ul>
           {links.map((link) => {
             const { id, url, text, icon } = link;

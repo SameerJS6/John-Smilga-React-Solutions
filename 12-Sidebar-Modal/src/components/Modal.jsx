@@ -1,12 +1,20 @@
 import React from "react";
 import Button from "./Button";
 import useRipple from "use-ripple-hook";
+import { useGlobalContext } from "../context/Context";
 
 export default function Modal() {
   const [ripple, event] = useRipple({ color: "#0000001a", duration: 700 });
+  const { showModal, CloseModal } = useGlobalContext();
   return (
     <>
-      <article className="fixed left-1/2 top-1/2 z-10 grid -translate-x-1/2 -translate-y-1/2 justify-center rounded-xl bg-white p-4 shadow-xl transition-all duration-300 sm:p-8">
+      <article
+        className={`fixed left-1/2 top-1/2 z-10 grid -translate-x-1/2 -translate-y-1/2 justify-center rounded-xl bg-white p-4 shadow-xl transition-all duration-500 sm:p-8 ${
+          showModal
+            ? "visible -translate-y-1/2 opacity-100"
+            : "invisible translate-y-1 opacity-0"
+        }`}
+      >
         <div className="mx-auto mt-4 rounded-full bg-red-200 p-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +49,7 @@ export default function Modal() {
           <Button
             text={"Cancel"}
             customeColor="rgba(0,0,0, .3)"
+            onClick={CloseModal}
             className={
               "rounded-[1.5rem] border-2 border-slate-900 bg-transparent px-4 py-2 text-base font-normal text-slate-950 active:rounded-xl"
             }
@@ -49,6 +58,7 @@ export default function Modal() {
         <button
           ref={ripple}
           onMouseDown={event}
+          onClick={CloseModal}
           className="absolute right-3 top-3 rounded-full bg-slate-50 p-3 transition-all duration-300 hover:top-2 hover:bg-slate-100 hover:shadow-lg"
         >
           <svg
@@ -67,8 +77,6 @@ export default function Modal() {
           </svg>
         </button>
       </article>
-
-      {/* <div className="bg-overlay show-overlay"></div> */}
     </>
   );
 }
