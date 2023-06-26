@@ -17,7 +17,7 @@ export default function Sidebar() {
       className={`fixed left-0 top-0 z-10 flex h-[100dvh] w-[90%] max-w-[300px] flex-col rounded-e-3xl bg-white shadow-2xl transition-all duration-500 ease-in-out sm:max-w-[350px] ${
         showSidebar
           ? "pointer-events-auto visible translate-x-0 opacity-100"
-          : "pointer-events-none invisible -translate-x-8 opacity-0"
+          : "pointer-events-none invisible -translate-x-28 opacity-0"
       }`}
     >
       <div className="flex items-center justify-between py-3 pl-5 pr-2">
