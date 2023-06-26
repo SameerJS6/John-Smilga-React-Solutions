@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import useRipple from "use-ripple-hook";
 import { links, social } from "../data";
 import { useGlobalContext } from "../context/Context";
+import useClickOutside from "../hook/useClickOutside";
 
 export default function Sidebar() {
   const [ripple, event] = useRipple({ color: "#0000001d", duration: 700 });
   const { showSidebar, CloseSidebar } = useGlobalContext();
+  const [show, setShow] = useState(false);
+
+  let menuRef = useRef();
+  useClickOutside(menuRef, CloseSidebar);
   return (
     <aside
-      className={`fixed left-0 top-0 z-10 flex h-[100vh] w-[90%] max-w-[350px] flex-col bg-white shadow-2xl transition-all duration-500 ease-in-out ${
+      ref={menuRef}
+      className={`fixed left-0 top-0 z-10 flex h-[100dvh] w-[90%] max-w-[300px] flex-col rounded-e-3xl bg-white shadow-2xl transition-all duration-500 ease-in-out sm:max-w-[350px] ${
         showSidebar
-          ? "visible translate-x-0 opacity-100"
-          : "invisible -translate-x-8 opacity-0"
+          ? "pointer-events-auto visible translate-x-0 opacity-100"
+          : "pointer-events-none invisible -translate-x-8 opacity-0"
       }`}
     >
       <div className="flex items-center justify-between py-3 pl-5 pr-2">
@@ -43,7 +49,7 @@ export default function Sidebar() {
             return (
               <li key={id}>
                 <a
-                  className="ease-in-ou flex items-center gap-4 rounded-e-full p-3 px-8 text-lg font-medium capitalize transition-all duration-300 hover:bg-slate-100"
+                  className="flex items-center gap-4 rounded-e-full p-3 px-8 text-lg font-medium capitalize transition-all duration-300 ease-in-out hover:bg-slate-100 "
                   href={url}
                 >
                   {icon} {text}

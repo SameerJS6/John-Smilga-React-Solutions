@@ -13,7 +13,7 @@ export default function Home() {
         ref={ripple}
         onMouseDown={event}
         onClick={OpenSidebar}
-        className="fixed left-8 top-6 aspect-square rounded-full p-3 transition-all duration-300 ease-in-out hover:bg-slate-100 hover:shadow-lg"
+        className="slide-in fixed left-8 top-6 aspect-square rounded-full p-3 transition-all duration-300 ease-in-out hover:bg-slate-100 hover:shadow-lg"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

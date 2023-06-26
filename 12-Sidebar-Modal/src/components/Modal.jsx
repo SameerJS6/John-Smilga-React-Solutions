@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import Button from "./Button";
 import useRipple from "use-ripple-hook";
 import { useGlobalContext } from "../context/Context";
+import useClickOutside from "../hook/useClickOutside";
 
 export default function Modal() {
   const [ripple, event] = useRipple({ color: "#0000001a", duration: 700 });
   const { showModal, CloseModal } = useGlobalContext();
+  let modalRef = useRef();
+  useClickOutside(modalRef, CloseModal);
   return (
     <>
       <article
-        className={`fixed left-1/2 top-1/2 z-10 grid -translate-x-1/2 -translate-y-1/2 justify-center rounded-xl bg-white p-4 shadow-xl transition-all duration-500 sm:p-8 ${
+        ref={modalRef}
+        className={`fixed left-1/2 top-1/2 z-10 grid min-w-[300px] -translate-x-1/2 -translate-y-1/2 justify-center rounded-xl bg-white p-4 shadow-xl transition-all duration-500 max-[300px]:min-w-[250px] sm:p-8 ${
           showModal
             ? "visible -translate-y-1/2 opacity-100"
             : "invisible translate-y-1 opacity-0"
