@@ -1,9 +1,18 @@
 import React from "react";
-import Sidebar from "./Sidebar";
+import Button from "./Button";
+import useRipple from "use-ripple-hook";
+import { useGlobalContext } from "../context/context";
 
 export default function Navbar() {
+  const [ripple, event] = useRipple({ color: "#0000001a", duration: 700 });
+  const { OpenSidebar, isSidebarOpen } = useGlobalContext();
+
   return (
-    <nav className="flex items-center justify-between px-4 py-4 sm:px-16 sm:py-6 lg:px-24 lg:py-8 xl:px-32">
+    <nav
+      className={`flex items-center justify-between px-4 py-4 sm:px-16 sm:py-6 lg:px-24 lg:py-8 xl:px-32 ${
+        isSidebarOpen ? "bg-overlay show-overlay" : "bg-overlay"
+      }`}
+    >
       <div className="flex items-center justify-between max-lg:w-full">
         <svg
           viewBox="0 0 60 25"
@@ -19,9 +28,23 @@ export default function Navbar() {
             fill-rule="evenodd"
           ></path>
         </svg>
-        <div className="lg:hidden">
-          <Sidebar />
-        </div>
+        <button
+          ref={ripple}
+          onMouseDown={event}
+          onClick={OpenSidebar}
+          className="aspect-square rounded-full p-3 transition-all duration-300 ease-in-out hover:bg-slate-50 hover:shadow lg:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+            fill="#000000"
+          >
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </button>
       </div>
 
       <ul className="hidden items-center gap-8 font-medium lg:flex lg:text-lg">
@@ -37,65 +60,14 @@ export default function Navbar() {
       </ul>
 
       <div className="hidden items-center gap-4 lg:flex ">
-        <button className="group flex items-center gap-1 rounded-full  px-4 py-2 font-medium transition-all duration-300 ease-in-out hover:-translate-y-1 ">
-          Contact Sales
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="h-5 w-5 group-hover:hidden"
-          >
-            <path
-              fillRule="evenodd"
-              d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-              clipRule="evenodd"
-            />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="hidden  h-5 w-5 opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:translate-x-1 group-hover:opacity-100"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-            />
-          </svg>
-        </button>
-
-        <button className="group flex items-center justify-center gap-1 rounded-full bg-emerald-600 px-4 py-2 font-medium text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-emerald-500 hover:shadow-md">
-          Sign in
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="h-5 w-5 group-hover:hidden"
-          >
-            <path
-              fillRule="evenodd"
-              d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-              clipRule="evenodd"
-            />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="hidden  h-5 w-5 opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:translate-x-1 group-hover:opacity-100"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-            />
-          </svg>
-        </button>
+        <Button content="Contact sales" duration={700} />
+        <Button
+          content="Sign in"
+          className={
+            "bg-emerald-600 text-white hover:bg-emerald-500 hover:shadow-md"
+          }
+          duration={750}
+        />
       </div>
     </nav>
   );
