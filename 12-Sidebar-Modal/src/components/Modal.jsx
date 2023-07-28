@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Button from "./Button";
+import Button from "./Elements/Button";
 import useRipple from "use-ripple-hook";
 import { useGlobalContext } from "../context/Context";
 import useClickOutside from "../hook/useClickOutside";

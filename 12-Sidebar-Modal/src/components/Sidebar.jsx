@@ -1,13 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import useRipple from "use-ripple-hook";
 import { links, social } from "../data";
 import { useGlobalContext } from "../context/Context";
 import useClickOutside from "../hook/useClickOutside";
+import Link from "./Elements/Link";
 
 export default function Sidebar() {
   const [ripple, event] = useRipple({ color: "#0000001d", duration: 700 });
   const { showSidebar, CloseSidebar } = useGlobalContext();
-  const [show, setShow] = useState(false);
 
   let menuRef = useRef();
   useClickOutside(menuRef, CloseSidebar);
@@ -26,7 +26,7 @@ export default function Sidebar() {
           ref={ripple}
           onMouseDown={event}
           onClick={CloseSidebar}
-          className="aspect-square rounded-full p-3 transition-all duration-300 ease-in-out hover:bg-slate-100 hover:shadow-lg"
+          className="aspect-square rounded-full p-3 transition-all duration-300 ease-in-out hover:bg-slate-100 hover:shadow"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -45,17 +45,7 @@ export default function Sidebar() {
       <nav className="flex h-full flex-col justify-between pb-20 pt-4 sm:pb-12">
         <ul>
           {links.map((link) => {
-            const { id, url, text, icon } = link;
-            return (
-              <li key={id}>
-                <a
-                  className="flex items-center gap-4 rounded-e-full p-3 px-8 text-lg font-medium capitalize transition-all duration-300 ease-in-out hover:bg-slate-100 "
-                  href={url}
-                >
-                  {icon} {text}
-                </a>
-              </li>
-            );
+            return <Link key={link.id} {...link} />;
           })}
         </ul>
 
