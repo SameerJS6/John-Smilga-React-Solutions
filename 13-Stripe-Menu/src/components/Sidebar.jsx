@@ -1,12 +1,16 @@
-import React from "react";
+import React, {useRef} from "react";
 import useRipple from "use-ripple-hook";
 import { useGlobalContext } from "../context/context";
+import useClickOutside from "../hook/useClickOutside";
 
 export default function Sidebar() {
+  let SidebarRef = useRef()
+  
   const [ripple, event] = useRipple({ color: "#0000001a", duration: 700 });
   const { isSidebarOpen, CloseSidebar } = useGlobalContext();
+  useClickOutside(SidebarRef, CloseSidebar)
   return (
-    <aside
+    <aside ref={SidebarRef}
       className={`fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-8 text-4xl shadow-lg transition-all duration-300 ease-in-out lg:hidden ${
         isSidebarOpen
           ? "visible z-10 -translate-y-1/2 opacity-100"
