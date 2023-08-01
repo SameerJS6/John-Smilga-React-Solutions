@@ -1,17 +1,15 @@
 import React from "react";
-import Button from "./Button";
+import Button from "./Elements/Button";
 import useRipple from "use-ripple-hook";
 import { useGlobalContext } from "../context/context";
 
 export default function Navbar() {
   const [ripple, event] = useRipple({ color: "#0000001a", duration: 700 });
-  const { OpenSidebar, isSidebarOpen } = useGlobalContext();
+  const { OpenSidebar } = useGlobalContext();
 
   return (
     <nav
-      className={`flex items-center justify-between px-4 py-4 sm:px-16 sm:py-6 lg:px-24 lg:py-8 xl:px-32 ${
-        isSidebarOpen ? "bg-overlay show-overlay" : "bg-overlay"
-      }`}
+      className={`absolute flex w-full items-center justify-between px-4 py-4 sm:px-16 sm:py-6 lg:px-24 lg:py-8 xl:px-32 `}
     >
       <div className="flex items-center justify-between max-lg:w-full">
         <svg
@@ -31,7 +29,7 @@ export default function Navbar() {
           ref={ripple}
           onMouseDown={event}
           onClick={OpenSidebar}
-          className="aspect-square rounded-full p-3 transition-all duration-300 ease-in-out hover:bg-slate-50 hover:shadow lg:hidden"
+          className="aspect-square rounded-full p-3 transition-all duration-300 ease-in-out lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,13 +46,13 @@ export default function Navbar() {
 
       <ul className="hidden items-center gap-8 font-medium lg:flex lg:text-lg">
         <li className="cursor-pointer rounded-full px-4 py-2 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-blue-100 hover:shadow-lg">
-          <buttton>Product</buttton>
+          <button>Product</button>
         </li>
         <li className="cursor-pointer rounded-full px-4 py-2 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-blue-100 hover:shadow-lg">
-          <buttton>Pricing</buttton>
+          <button>Pricing</button>
         </li>
         <li className="cursor-pointer rounded-full px-4 py-2 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-blue-100 hover:shadow-lg">
-          <buttton>Developers</buttton>
+          <button>Developers</button>
         </li>
       </ul>
 
