@@ -1,15 +1,21 @@
 import React, { useState, useContext } from "react";
+import sublinks from "../data";
 
 const AppContext = React.createContext();
 
 export const AppProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [coordinates, setCoordinates] = useState({});
+  const [page, setPage] = useState({ page: "", links: [] });
 
   const OpenSidebar = () => {
     setIsSidebarOpen(true);
   };
-  const OpenMenu = () => {
+  const OpenMenu = (text, coordinates) => {
+    const currentPage = sublinks.find((link) => link.page === text);
+    setPage(currentPage);
+    setCoordinates(coordinates);
     setIsMenuOpen(true);
   };
   const CloseMenu = () => {
@@ -27,6 +33,8 @@ export const AppProvider = ({ children }) => {
         CloseSidebar,
         isSidebarOpen,
         isMenuOpen,
+        coordinates,
+        page,
       }}
     >
       {children}

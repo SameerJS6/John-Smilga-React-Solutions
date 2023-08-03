@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-slate-200;
+}
 @media (max-width: 1023px) {
   .bg-overlay::after {
     @apply pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0000001f] to-[#00000098] opacity-0 transition-all duration-300 ease-in-out content-[""];
@@ -9,4 +12,20 @@
   .show-overlay::after {
     @apply pointer-events-auto opacity-100;
   }
+}
+
+/* Submenu Arrow  */
+.arrow-up::before {
+  @apply absolute -top-2 left-1/2 h-0 w-0 -translate-x-1/2 content-[""];
+  border-radius: 20px;
+  border-bottom: 12px solid white;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+}
+
+.grid-2 {
+  @apply grid-cols-2;
+}
+.grid-3 {
+  @apply grid-cols-3;
 }
