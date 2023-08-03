@@ -3,6 +3,7 @@ import sublinks from "../data";
 import useRipple from "use-ripple-hook";
 import { useGlobalContext } from "../context/context";
 import useClickOutside from "../hook/useClickOutside";
+import Link from "./Elements/Link";
 
 export default function Sidebar() {
   let SidebarRef = useRef();
@@ -47,17 +48,7 @@ export default function Sidebar() {
               <h5 className="text-xl font-medium capitalize">{page}</h5>
               <div className="grid grid-cols-2 gap-1">
                 {links.map((link, index) => {
-                  const { url, icon, label } = link;
-                  return (
-                    <a
-                      href={url}
-                      key={index}
-                      className="flex items-center gap-2 capitalize"
-                    >
-                      {icon}
-                      {label}
-                    </a>
-                  );
+                  return <Link key={index} {...link} />;
                 })}
               </div>
             </article>
