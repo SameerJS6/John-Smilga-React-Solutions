@@ -1,5 +1,11 @@
 import React from "react";
+import { useGlobalContext } from "../context/context";
 
 export default function Hero() {
-  return <div className="min-h-[570px]">Hero</div>;
+  const { CloseMenu } = useGlobalContext();
+  return (
+    <div onMouseOver={CloseMenu} className="min-h-[570px]">
+      Hero
+    </div>
+  );
 }
