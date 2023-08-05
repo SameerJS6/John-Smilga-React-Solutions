@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav
       onMouseOver={handleCloseMenu}
-      className={`absolute flex w-full items-center justify-between px-4 py-4 sm:px-16 sm:py-6 lg:px-24 lg:py-8 xl:px-32 `}
+      className={`absolute flex w-full items-center justify-between px-8 py-4 sm:px-16 sm:py-6 lg:px-20 lg:py-4 xl:px-32 `}
     >
       <div className="flex items-center justify-between max-lg:w-full">
         <svg
@@ -44,14 +44,14 @@ export default function Navbar() {
           ref={ripple}
           onMouseDown={event}
           onClick={OpenSidebar}
-          className="aspect-square rounded-full p-3 transition-all duration-300 ease-in-out lg:hidden"
+          className="aspect-square rounded-full bg-white bg-opacity-20 bg-clip-padding p-3 backdrop-blur-lg backdrop-filter transition-all duration-300 ease-in-out lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 0 24 24"
             width="24px"
-            fill="#000000"
+            fill="#ffffff"
           >
             <path d="M0 0h24v24H0V0z" fill="none" />
             <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
@@ -59,27 +59,27 @@ export default function Navbar() {
         </button>
       </div>
 
-      <ul className="linkBtn hidden items-center gap-8 font-medium lg:flex lg:text-lg">
-        <li className="">
+      <ul className="linkBtn hidden items-center gap-6 font-bold text-white lg:flex">
+        <li>
           <button
             onMouseOver={handleMenu}
-            className="linkBtn cursor-pointer rounded-full p-4 capitalize transition-all duration-300 ease-in-out hover:-translate-y-1"
+            className="linkBtn cursor-default rounded-full p-4 capitalize transition-all duration-300 ease-in-out hover:-translate-y-1"
           >
             products
           </button>
         </li>
-        <li className="">
+        <li>
           <button
             onMouseOver={handleMenu}
-            className="linkBtn cursor-pointer rounded-full p-4 capitalize transition-all duration-300 ease-in-out hover:-translate-y-1"
+            className="linkBtn cursor-default rounded-full p-4 capitalize transition-all duration-300 ease-in-out hover:-translate-y-1"
           >
             company
           </button>
         </li>
-        <li className="">
+        <li>
           <button
             onMouseOver={handleMenu}
-            className="linkBtn cursor-pointer rounded-full p-4 capitalize transition-all duration-300 ease-in-out hover:-translate-y-1"
+            className="linkBtn cursor-default rounded-full p-4 capitalize transition-all duration-300 ease-in-out hover:-translate-y-1"
           >
             developers
           </button>
@@ -87,11 +87,11 @@ export default function Navbar() {
       </ul>
 
       <div className="hidden items-center gap-4 lg:flex ">
-        <Button content="Contact sales" duration={700} />
+        <Button content="Contact sales" duration={700} className="text-white" />
         <Button
           content="Sign in"
           className={
-            "bg-emerald-600 text-white hover:bg-emerald-500 hover:shadow-md"
+            "bg-white bg-opacity-30 bg-clip-padding text-white backdrop-blur-lg backdrop-filter"
           }
           duration={750}
         />

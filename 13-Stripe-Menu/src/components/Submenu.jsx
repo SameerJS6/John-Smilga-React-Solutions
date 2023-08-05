@@ -22,13 +22,13 @@ export default function Submenu() {
     <aside
       ref={MenuRef}
       className={`${
-        isMenuOpen
-          ? "scale-100  opacity-100 "
-          : "pointer-events-none scale-0 opacity-0"
-      }  arrow-up absolute left-1/2 top-16 w-fit origin-bottom -translate-x-1/2 rounded-xl bg-white p-8 text-lg font-medium shadow-lg transition-all duration-300 ease-in-out`}
+        isMenuOpen ? "scale-100 opacity-100 " : "scale-0 opacity-0"
+      }  arrow-up shadow-3xl absolute left-1/2 top-16 w-fit origin-bottom -translate-x-1/2 rounded-xl bg-white p-8 text-lg font-medium transition-all duration-300 ease-in-out`}
     >
-      <h4 className="mb-4 text-xl font-medium capitalize">{page.page}</h4>
-      <article className={`grid ${grid} gap-4`}>
+      <h4 className="mb-4 text-xl font-medium capitalize text-[#0A2540]">
+        {page.page}
+      </h4>
+      <article className={`grid ${grid} gap-4 text-[#0A2540] text-opacity-80`}>
         {page.links.map((link, index) => {
           return <Link key={index} {...link} />;
         })}

@@ -8,7 +8,7 @@ export default function Link({ url, icon, label }) {
       ref={ripple}
       onMouseDown={event}
       href={url}
-      className="flex items-center gap-2 rounded-full px-2 py-1 capitalize"
+      className="flex items-center gap-2 rounded-full px-2 py-1 capitalize hover:bg-slate-50 transition-all duration-200 ease-in-out"
     >
       {icon}
       {label}
