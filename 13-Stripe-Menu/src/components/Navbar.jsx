@@ -87,11 +87,15 @@ export default function Navbar() {
       </ul>
 
       <div className="hidden items-center gap-4 lg:flex ">
-        <Button content="Contact sales" duration={700} className="text-white" />
+        <Button
+          content="Contact sales"
+          duration={700}
+          className="font-semibold text-white"
+        />
         <Button
           content="Sign in"
           className={
-            "bg-white bg-opacity-30 bg-clip-padding text-white backdrop-blur-lg backdrop-filter"
+            "bg-white bg-opacity-30 bg-clip-padding font-semibold text-white backdrop-blur-lg backdrop-filter"
           }
           duration={750}
         />
