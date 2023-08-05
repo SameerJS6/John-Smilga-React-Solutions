@@ -9,24 +9,24 @@ export default function Hero() {
   return (
     <main
       onMouseOver={CloseMenu}
-      className="grid min-h-screen place-content-center pt-16 sm:pt-40 py-8 xl:py-16 xl:pt-44"
+      className="grid min-h-screen place-content-center py-8 pt-16 sm:pt-40 xl:py-16 xl:pt-44"
     >
-      <div className="grid sm:grid-cols-2 gap-12 sm:gap-4 px-8 sm:pr-0 lg:px-20 xl:px-32">
+      <div className="slide-in-bottom grid gap-12 px-8 sm:grid-cols-2 sm:gap-4 sm:pr-0 lg:px-20 xl:px-32">
         <div className="space-y-12">
           <div className="relative">
-            <h1 className="text-[#0A2540] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mix-blend-overlay">
+            <h1 className="text-4xl font-bold text-[#0A2540] mix-blend-overlay sm:text-5xl lg:text-6xl xl:text-7xl">
               Payments infrastructure for the internet
             </h1>
-            <span className="absolute left-0 top-0 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mix-blend-overlay">
+            <span className="absolute left-0 top-0 text-4xl font-bold mix-blend-overlay sm:text-5xl lg:text-6xl xl:text-7xl">
               Payments infrastructure for the internet
             </span>
           </div>
-          <p className="font-medium text-slate-500 text-sm md:text-base">
+          <p className="text-sm font-medium text-slate-500 md:text-base">
             Millions of businesses of all sizes—from startups to large
             enterprises—use Stripe’s software and APIs to accept payments, send
             payouts, and manage their businesses online.
           </p>
-          <div className="items-center gap-4 flex text-sm sm:text-base">
+          <div className="flex items-center gap-4 text-sm sm:text-base">
             <Button
               content="Start now"
               className={
@@ -37,12 +37,12 @@ export default function Hero() {
             <Button
               content="Contact sales"
               duration={700}
-              className="px-3 py-1 text-[#0A2540] flex"
+              className="flex px-3 py-1 text-[#0A2540]"
             />
           </div>
         </div>
 
-        <div className="sm:ml-auto mx-auto hidden sm:block">
+        <div className="mx-auto hidden sm:ml-auto sm:block">
           <img src={PhoneImg} alt="An Image of Stripe's UI" />
         </div>
       </div>

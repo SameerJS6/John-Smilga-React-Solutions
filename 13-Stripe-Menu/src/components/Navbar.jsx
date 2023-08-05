@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav
       onMouseOver={handleCloseMenu}
-      className={`absolute flex w-full items-center justify-between px-8 py-4 sm:px-16 sm:py-6 lg:px-20 lg:py-4 xl:px-32 `}
+      className={`slide-in-top absolute flex w-full items-center justify-between px-8 py-4 sm:px-16 sm:py-6 lg:px-20 lg:py-4 xl:px-32 `}
     >
       <div className="flex items-center justify-between max-lg:w-full">
         <svg

@@ -81,3 +81,36 @@ span {
     scrollbar-width: thin;
   }
 }
+
+/* All Animation  */
+
+.slide-in-top {
+  animation: slide-in-top 1s ease;
+}
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-bottom {
+  animation: slide-in-bottom 1s ease;
+}
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  50% {
+    translate: 0px -20px;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
