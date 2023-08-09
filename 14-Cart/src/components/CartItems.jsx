@@ -3,7 +3,7 @@ import Button from "./Elements/Button";
 import { useGlobalContext } from "../context/context";
 
 export default function CartItems({ id, title, price, img, amount }) {
-  const { removeItem } = useGlobalContext();
+  const { increaseItem, decreaseItem, removeItem } = useGlobalContext();
   return (
     <article className="relative flex flex-col gap-8 sm:gap-4 sm:flex-row items-center justify-between sm:pl-8 px-4 sm:pr-20 py-4 bg-purple-100 max-w-2xl mx-auto rounded-xl my-4 overflow-hidden">
       <div className="flex gap-8 items-center">
@@ -22,7 +22,9 @@ export default function CartItems({ id, title, price, img, amount }) {
 
       <div className="flex flex-col gap-2 items-center">
         <div className="flex bg-purple-200 items-center rounded-full overflow-hidden border-2 border-purple-300">
+          {/* {Decrement Button} */}
           <Button
+            onClick={() => decreaseItem(id)}
             RippleColor="rgb(147 51 234 / 0.4)"
             duration={350}
             className="p-1 border-white border-r-[1px] hover:bg-purple-300 hover:bg-opacity-50 "
@@ -42,8 +44,13 @@ export default function CartItems({ id, title, price, img, amount }) {
               />
             </svg>
           </Button>
+
+          {/* {Quantity} */}
           <p className="font-medium w-[4ch] text-center">{amount}</p>
+
+          {/* {Increment Button} */}
           <Button
+            onClick={() => increaseItem(id)}
             RippleColor="rgb(147 51 234 / 0.4)"
             duration={350}
             className="p-1 border-white border-l-[1px] hover:bg-purple-300 hover:bg-opacity-40"
@@ -66,6 +73,7 @@ export default function CartItems({ id, title, price, img, amount }) {
         </div>
         <div className="sm:hidden">
           <Button
+            onClick={() => removeItem(id)}
             RippleColor="rgba(243, 113, 113, .5)"
             className="p-2 py-1 rounded-md text-sm font-medium transition-all duration-300 ease-in-out hover:bg-red-100 active:rounded-full text-red-500 "
           >
@@ -75,7 +83,7 @@ export default function CartItems({ id, title, price, img, amount }) {
       </div>
 
       <Button
-        onClick={()=> removeItem(id)}
+        onClick={() => removeItem(id)}
         RippleColor="rgba(243, 113, 113, .5)"
         className="hidden sm:grid place-content-center bor absolute -right-1 top-0 h-full px-3 py-1 border-l-2 border-white text-lg font-medium transition-all duration-300 ease-in-out hover:bg-red-50 text-red-500 "
       >
