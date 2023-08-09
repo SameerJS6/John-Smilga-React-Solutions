@@ -1,6 +1,9 @@
 import React from "react";
-import Button from "../Elements/Button";
-export default function CartItems({ title, price, img, amount }) {
+import Button from "./Elements/Button";
+import { useGlobalContext } from "../context/context";
+
+export default function CartItems({ id, title, price, img, amount }) {
+  const { removeItem } = useGlobalContext();
   return (
     <article className="relative flex flex-col gap-8 sm:gap-4 sm:flex-row items-center justify-between sm:pl-8 px-4 sm:pr-20 py-4 bg-purple-100 max-w-2xl mx-auto rounded-xl my-4 overflow-hidden">
       <div className="flex gap-8 items-center">
@@ -72,8 +75,9 @@ export default function CartItems({ title, price, img, amount }) {
       </div>
 
       <Button
+        onClick={()=> removeItem(id)}
         RippleColor="rgba(243, 113, 113, .5)"
-        className="hidden sm:grid place-content-center bor absolute -right-1 top-0 h-full p-2 py-1 border-l-2 border-white text-lg font-medium transition-all duration-300 ease-in-out hover:bg-red-50 text-red-500 "
+        className="hidden sm:grid place-content-center bor absolute -right-1 top-0 h-full px-3 py-1 border-l-2 border-white text-lg font-medium transition-all duration-300 ease-in-out hover:bg-red-50 text-red-500 "
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
