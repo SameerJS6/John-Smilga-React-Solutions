@@ -1,4 +1,7 @@
+import { useGlobalContext } from "../context/context";
+
 export default function Navbar() {
+  const {amount} = useGlobalContext()
   return (
     <nav className="flex items-center justify-between bg-purple-600 py-4 px-8 sm:px-10 md:px-12 lg:px-16 xl:px:24">
       <div>
@@ -23,7 +26,7 @@ export default function Navbar() {
         </svg>
 
         <div className="absolute left-3 -top-2.5 md:-top-3 bg-white rounded-full font-medium px-2 md:text-lg">
-          <p>5</p>
+          <p>{amount}</p>
         </div>
       </div>
     </nav>

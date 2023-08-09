@@ -9,9 +9,11 @@ export default function CartContainer() {
 
   return (
     <main className="max-w-4xl mx-auto py-16 md:pb-4 md:py-16 px-4">
-      <header className="text-4xl sm:text-5xl font-medium capitalize text-purple-900 text-center mb-6 sm:mb-8">
-        your cart
-      </header>
+      {cartItems.length >= 1 && (
+        <header className="text-4xl sm:text-5xl font-medium capitalize text-purple-900 text-center mb-6 sm:mb-8">
+          your cart
+        </header>
+      )}
 
       {cartItems.length === 0 && <EmptyCart />}
 
