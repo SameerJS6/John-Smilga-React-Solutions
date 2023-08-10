@@ -1,5 +1,5 @@
 import React from "react";
-import EmptyImg from "../Asset/Empty.png";
+import EmptyImg from "../../Asset/Empty.png";
 
 export default function EmptyCart() {
   return (

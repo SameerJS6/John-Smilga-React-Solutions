@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "./Elements/Button";
-import { useGlobalContext } from "../context/context";
+import Button from "../Elements/Button";
+import { useGlobalContext } from "../../context/context";
 
 export default function CartItems({ id, title, price, img, amount }) {
   const { increaseItem, decreaseItem, removeItem } = useGlobalContext();

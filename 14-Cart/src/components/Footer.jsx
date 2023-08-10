@@ -14,7 +14,7 @@ export default function Footer() {
 
       <div className="flex justify-center my-10">
         <Button
-        onClick={clearCart}
+          onClick={clearCart}
           RippleColor="rgb(239 68 68 / 0.3)"
           className="capitalize bg-red-100 px-4 sm:px-6 py-1.5 md:py-2 rounded-3xl mx-auto w-fit active:rounded-lg font-semibold sm:text-lg text-red-500 hover:shadow-md tracking-widest"
         >

@@ -1,8 +1,8 @@
 import React from "react";
 import EmptyCart from "./EmptyCart";
 import CartItems from "./CartItems";
-import Footer from "./Footer";
-import { useGlobalContext } from "../context/context";
+import Footer from "../Footer";
+import { useGlobalContext } from "../../context/context";
 
 export default function CartContainer() {
   const { cartItems } = useGlobalContext();
