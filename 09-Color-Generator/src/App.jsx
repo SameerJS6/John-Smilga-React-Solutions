@@ -60,6 +60,7 @@ export default function App() {
                   className="input-focus bg-transparent px-4 py-2 max-w-[5ch] rounded-full aspect-square text-center font-semibold transition-all duration-300"
                   type="text"
                   value={tint}
+                  disabled
                   onChange={(e) => setTint(e.target.value)}
                 />
               </div>
