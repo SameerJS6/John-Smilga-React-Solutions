@@ -1,6 +1,7 @@
 import React, { useContext, useReducer, useEffect } from "react";
 import Items from "../data";
 import Reducer from "../components/Reducer";
+import { toast } from "react-toastify";
 
 const AppContext = React.createContext();
 
@@ -14,11 +15,26 @@ const initialState = {
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
 
+  const Message = (msg) => {
+    toast.error(msg, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+
   const clearCart = () => {
+    Message("Cart Cleared");
     dispatch({ type: "CLEAR_CART" });
   };
 
   const removeItem = (id) => {
+    Message("Item Removed");
     dispatch({ type: "REMOVE_ITEM", payload: id });
   };
 

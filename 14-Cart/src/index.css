@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 /* Scrollbar for Body  */
 ::-webkit-scrollbar {
   @apply w-2 rounded-full;
@@ -21,4 +25,13 @@
 
 .phone-title {
   text-wrap: balance;
+}
+
+/* Toast Styling  */
+.Toastify__toast {
+  font-family: "Roboto", sans-serif;
+  @apply font-medium  rounded-lg text-black tracking-wide;
+}
+.Toastify__progress-bar--error {
+  @apply bg-red-500;
 }
