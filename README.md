@@ -11,3 +11,4 @@
 1. Navbar Live Site URL :- [Live Site](https://navbar1-singh.netlify.app/)
 1. Sidebar & Modal Live Site URL :- [Live Site](https://sidebar-modal-singh.netlify.app/)
 1. Stripe Submenu Live Site URL :- [Live Site](https://stripe-submenu-singh.netlify.app/)
+1. Shopping Cart Live Site URL :- [Live Site](https://cart-singh.netlify.app/)
