@@ -1,6 +1,23 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import gsap from "gsap";
-export default function Cards({ id, name, info, image, price, removeCard }) {
+
+export interface ToursProps {
+  id: string;
+  name: string;
+  info: string;
+  image: string;
+  price: string;
+  removeCard: void | any;
+}
+
+export default function Cards({
+  id,
+  name,
+  info,
+  image,
+  price,
+  removeCard,
+}: ToursProps) {
   const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
@@ -24,8 +41,8 @@ export default function Cards({ id, name, info, image, price, removeCard }) {
     <>
       <section className="invisible">
         <div className="shadow-xl rounded-lg">
-          <div className="tour | relative rounded-lg bg-white">
-            <div className="image-wrapper | relative overflow-hidden rounded-t-lg ">
+          <div className="tour relative rounded-lg bg-white">
+            <div className="image-wrapper relative overflow-hidden rounded-t-lg h-[325px]">
               <img
                 className="w-full rounded-t-lg mx-auto aspect-square object-cover shadow-lg hover:scale-110 transition-all duration-[1s] ease-in-out"
                 src={image}

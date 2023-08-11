@@ -1,18 +1,26 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Cards from "./components/Cards";
 import Loading from "./components/Loading";
 import Refresh from "./assets/refresh.svg";
 import gsap from "gsap";
 
+export interface Tours {
+  id: string;
+  name: string;
+  info: string;
+  image: string;
+  price: string;
+}
+
 export default function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any | string>([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  const url = "https://course-api.com/react-tours-project";
+  const url: string = "https://course-api.com/react-tours-project";
 
-  const RemoveCard = (id) => {
-    const NewCards = data.filter((tour) => tour.id !== id);
+  const RemoveCard = (id: string) => {
+    const NewCards = data.filter((tour: Tours) => tour.id !== id);
     setData(NewCards);
   };
   const FetchData = async () => {
@@ -27,7 +35,7 @@ export default function App() {
       const Result = await response.json();
       setLoading(false);
       setData(Result);
-    } catch (err) {
+    } catch (err: any) {
       setError(err.message);
       console.log(err);
       setLoading(false);
@@ -41,42 +49,37 @@ export default function App() {
   }, []);
   return (
     <>
-      <main className="main | max-w-[1440px] mx-auto invisible">
+      <main className="main max-w-[1440px] mx-auto invisible">
         {loading && <Loading />}
         {!loading && (
           <>
-            <div className="title | w-fit mx-auto">
-              <h1 className="my-text | text-3xl p-8 pb-4 font-bold">
+            <div className="title w-fit mx-auto">
+              <h1
+                style={{ "--duration": ` 1000ms` } as React.CSSProperties}
+                className="anime text-4xl md:text-5xl p-8 pb-4 font-bold text-center text-blue-900"
+              >
                 {data.length === 0 ? "No Tours Left, Buddy" : "Our Tours"}
               </h1>
             </div>
             <div
-              className={`layout | ${
+              className={`layout ${
                 data.length === 0 ? " " : "grid p-4 md:p-8 lg:py-12"
               } `}
             >
-              {data.map((items) => {
+              {data.map((items: Tours) => {
                 return (
-                  <Cards
-                    key={items.id}
-                    {...items}
-                    // title={items.name}
-                    // info={items.info}
-                    // imageUrl={items.image}
-                    // price={items.price}
-                    removeCard={RemoveCard}
-                  />
+                  <Cards key={items.id} {...items} removeCard={RemoveCard} />
                 );
               })}
             </div>
             <div
               className={`max-w-lg ${
-                data.length === 0 ? "scale block" : "scale hidden"
+                data.length === 0 ? "scale-in block" : "scale-in hidden"
               }`}
             >
               <img src={Refresh} alt="Refresh Svg" />
             </div>
-            <div className="refresh-btn | mx-auto grid justify-center">
+            <div className="refresh-btn mx-auto grid justify-center">
               <button
                 onClick={FetchData}
                 className={`gap-2 items-center text-white shadow bg-blue-500 rounded-lg text-xl py-3 px-8 font-bold transition-all duration-500 ease-in-out hover:shadow-xl hover:scale-110 hover:-translate-y-1 mt-4 ${
