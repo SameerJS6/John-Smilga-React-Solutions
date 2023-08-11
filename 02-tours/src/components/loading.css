@@ -3,7 +3,8 @@
   height: 72px;
   border-radius: 50%;
   border: 11.5px solid #3b82f6;
-  animation: spinner-bulqg1 0.8s infinite linear alternate,
+  animation:
+    spinner-bulqg1 0.8s infinite linear alternate,
     spinner-oaa3wk 1.6s infinite linear;
 }
 
