@@ -6,33 +6,26 @@ body {
   min-height: 100dvh;
   font-family: "Roboto", sans-serif;
 }
+
 /* Main Heading  */
 .main-heading {
-  position: relative;
-  background: url(/bg.jpg);
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: cover;
+  @apply relative bg-cover bg-[50%] bg-no-repeat bg-[url('/bg.jpg')];
 }
 .main-heading::after {
-  inset: 0;
-  content: "";
-  position: absolute;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.08),
-    rgba(0, 0, 0, 0.45)
-  );
+  @apply absolute inset-0 content-[""] bg-gradient-to-b from-[#00000014] to-[#00000073];
 }
+
 /* Card Hover  */
 .card-container:hover .Pizza {
   opacity: 1;
   transform: translateX(0) rotate(-45deg);
 }
+
 /* Ripple  */
 .react-ripples {
   border-radius: 100vmax;
 }
+
 /* All Animations  */
 .slide-in {
   animation: slide-in 1.5s ease;
@@ -62,6 +55,7 @@ body {
     opacity: 1;
   }
 }
+
 /* Scrollbar for Chrome  */
 ::-webkit-scrollbar {
   width: 10px;
@@ -78,6 +72,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(250 204 21);
 }
+
 /* Scroll Bar for Mozilla  */
 @supports (scrollbar-color: yellow black) {
   * {

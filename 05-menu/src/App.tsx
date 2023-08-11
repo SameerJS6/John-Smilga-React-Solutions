@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Buttons from "./components/Buttons";
 import Menus from "./components/Menus";
 import Data from "./data";
@@ -8,18 +8,33 @@ import Data from "./data";
 // Step 3: Store it in a array
 // Step 4: Add 'All' category in that array manualy and then destructure the whole new Set
 
-const allCategories = ["all", ...new Set(Data.map((items) => items.category))];
+interface DataCheck {
+  id: number;
+  title: string;
+  category: string;
+  price: number;
+  img: string;
+  desc: string;
+}
+
+const allCategories = [
+  "all",
+  ...new Set(Data.map((items: DataCheck) => items.category)),
+];
 console.log(allCategories);
+
 export default function App() {
   const [menu, setMenu] = useState(Data);
   const [categories, setCategories] = useState(allCategories);
 
-  const filterCategory = (category) => {
+  const filterCategory = (category: string): void => {
     if (category === "all") {
       setMenu(Data);
       return;
     }
-    const newMenu = Data.filter((item) => item.category === category);
+    const newMenu = Data.filter(
+      (item: DataCheck) => item.category === category
+    );
     setMenu(newMenu);
   };
   return (

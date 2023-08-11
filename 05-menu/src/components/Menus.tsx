@@ -1,11 +1,19 @@
-import React from "react";
 import Image from "/cake.png";
 
-export default function Menus({ menu }) {
+interface MenuCheck {
+  id: number;
+  title: string;
+  category: string;
+  price: number;
+  img: string;
+  desc: string;
+}
+
+export default function Menus({ menu }: any) {
   return (
     <>
       <article className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
-        {menu.map((items) => {
+        {menu.map((items: MenuCheck) => {
           const { id, title, price, img, desc } = items;
           return (
             <div
