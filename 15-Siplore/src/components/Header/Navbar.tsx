@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import useClickOutside from "../hook/useClickOutside";
-import CustomLink from "../Elements/CustomLink";
+import useClickOutside from "../../hook/useClickOutside";
+import CustomLink from "../../Elements/CustomLink";
 import Dropdown from "./Dropdown";
-import Button from "../Elements/Button";
+import Button from "../../Elements/Button";
 
 type Props = {};
 
