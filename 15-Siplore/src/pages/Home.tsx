@@ -1,9 +1,16 @@
 // import React from 'react'
 
-type Props = {}
+import CocktailGrid from "../components/CocktailGrid";
+import SearchBar from "../components/SearchBar";
+
+type Props = {};
 
 export default function Home({}: Props) {
+
   return (
-    <div>Home</div>
-  )
+    <main className="max-w-[1440px] mx-auto">
+      <SearchBar />
+      <CocktailGrid />
+    </main>
+  );
 }
