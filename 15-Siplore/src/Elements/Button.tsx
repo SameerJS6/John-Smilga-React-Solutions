@@ -19,8 +19,8 @@ export default function Button({
   return (
     <button
       {...props}
-      disabled
       ref={ripple}
+      disabled={disabled}
       onMouseDown={event}
       className={twMerge("btn place-content-center", className)}
     >

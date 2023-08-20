@@ -27,6 +27,7 @@ type Cocktail = {
   Instructions: string;
   DrinkImage: string;
 };
+
 const CocktailUrl: string =
   "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=";
 
@@ -34,7 +35,7 @@ const AppContext = createContext({} as AppContextType);
 
 const AppProvider = ({ children }: AppProviderProp) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("n");
+  const [searchTerm, setSearchTerm] = useState("a");
   const [cocktails, setCocktails] = useState<Cocktail[]>([]);
 
   const fetchCocktails = async () => {
