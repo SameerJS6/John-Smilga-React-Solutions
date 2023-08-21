@@ -15,24 +15,59 @@
   );
 }
 
+.inputBox:has(input:focus-visible) {
+  outline: 2px solid;
+  outline-offset: 4px;
+  outline-color: hsl(var(--n) / 0.6);
+  border: 2px solid hsl(var(--nf) / 0.7);
+}
+
 /* Animation  */
+
+.shake {
+  animation: shakeAnim 7s ease-in infinite;
+}
+@keyframes shakeAnim {
+  0% {
+    left: 0;
+  }
+  1% {
+    left: -3px;
+  }
+  2% {
+    left: 5px;
+  }
+  3% {
+    left: -8px;
+  }
+  4% {
+    left: 8px;
+  }
+  5% {
+    left: -5px;
+  }
+  6% {
+    left: 3px;
+  }
+  7% {
+    left: 0;
+  }
+}
 
 .tracking-in {
   text-wrap: balance;
-  color: #1f252e;
   animation: tracking-in 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 @keyframes tracking-in {
   0% {
-    letter-spacing: -0.5em;
-    transform: translateZ(-100px) translateY(100px);
+    letter-spacing: 0.5em;
     opacity: 0;
   }
   40% {
     opacity: 0.6;
   }
   100% {
-    transform: translateZ(0) translateY(0);
+    letter-spacing: normal;
     opacity: 1;
   }
 }
@@ -47,6 +82,27 @@
   }
   100% {
     transform: translateY(-30px);
-    opacity: 1
+    opacity: 1;
+  }
+}
+
+/* Scrollbar Styling  */
+
+::-webkit-scrollbar {
+  @apply w-[9px] rounded-full;
+}
+::-webkit-scrollbar-track {
+  @apply bg-base-100 my-2;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-focus rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
+@supports (scrollbar-color: olive black) {
+  * {
+    scrollbar-color: hsl(var(--pf)) hsl(var(--b1));
+    scrollbar-width: thin;
   }
 }
