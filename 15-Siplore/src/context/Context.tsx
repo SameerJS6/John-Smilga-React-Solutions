@@ -5,13 +5,16 @@ import {
   createContext,
   ReactNode,
   useEffect,
+  Dispatch,
 } from "react";
 
 // Types
 type AppContextType = {
   isLoading: boolean;
+  showAlert: boolean;
+  setShowAlert: Dispatch<React.SetStateAction<boolean>>;
   cocktails: Cocktail[];
-  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+  setSearchTerm: Dispatch<React.SetStateAction<string>>;
 };
 
 type AppProviderProp = {
@@ -35,6 +38,7 @@ const AppContext = createContext({} as AppContextType);
 
 const AppProvider = ({ children }: AppProviderProp) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("a");
   const [cocktails, setCocktails] = useState<Cocktail[]>([]);
 
@@ -86,8 +90,18 @@ const AppProvider = ({ children }: AppProviderProp) => {
     fetchCocktails();
   }, [searchTerm]);
 
+  useEffect(() => {
+    let timeout = setTimeout(() => {
+      setShowAlert(false);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, [showAlert]);
+
   return (
-    <AppContext.Provider value={{ isLoading, cocktails, setSearchTerm }}>
+    <AppContext.Provider
+      value={{ isLoading, showAlert, cocktails, setSearchTerm, setShowAlert }}
+    >
       {children}
     </AppContext.Provider>
   );
