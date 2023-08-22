@@ -19,7 +19,7 @@ export default function RandomCocktail({}: RandomCocktailProps) {
 
     const { idDrink } = drinks[0];
 
-    setCocktailId((prevId) => (prevId = idDrink));
+    setCocktailId(idDrink);
   };
 
   useEffect(() => {
