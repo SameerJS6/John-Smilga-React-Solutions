@@ -24,7 +24,7 @@ export default function CocktailGrid({}: Props) {
         </div>
       )}
 
-      {isLoading && <Loader />}
+      {isLoading && <Loader LoaderType="loading-dots" />}
 
       {!isLoading && (
         <div className="grid gap-4 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
