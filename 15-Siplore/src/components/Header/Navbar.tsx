@@ -20,7 +20,7 @@ export default function Navbar({}: Props) {
         {/* <Link to="/" className="btn btn-ghost normal-case text-xl">
           Siplore
         </Link> */}
-        <CustomLink pathTo="/" className="normal-case text-xl">
+        <CustomLink pathTo="/" className="normal-case btn-ghost text-xl">
           Siplore
         </CustomLink>
         <Button className="btn-circle btn-md btn-ghost lg:hidden">
