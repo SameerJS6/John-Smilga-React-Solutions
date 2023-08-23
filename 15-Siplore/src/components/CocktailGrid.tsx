@@ -18,7 +18,7 @@ export default function CocktailGrid({}: Props) {
     <section className="space-y-20 p-4 sm:px-6 lg:px-10 xl:px-12">
       {cocktails.length > 0 && (
         <div className="flex items-center justify-between">
-          <h1 className=" text-6xl text-left text-neutral tracking-in">
+          <h1 className=" text-6xl text-left text-base-content tracking-in">
             Cocktails
           </h1>
         </div>

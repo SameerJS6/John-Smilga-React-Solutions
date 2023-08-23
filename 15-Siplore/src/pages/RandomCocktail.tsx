@@ -35,7 +35,7 @@ export default function RandomCocktail({}: RandomCocktailProps) {
         <CustomLink
           onClick={FetchRandomCocktail}
           pathTo={`/cocktail/${cocktailId}`}
-          className="capitalize rounded-full bg-primary-focus text-base-100 text-base font-semibold hover:bg-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className="capitalize rounded-full btn-primary text-base font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -15,7 +15,7 @@ type Cocktail = {
   Alcoholic: string;
   Instructions: string[];
   DrinkImage: string;
-  Ingredients: [string?, string?, string?, string?, string?];
+  Ingredients: string[];
 };
 
 const SortByIdURL: string =
@@ -48,13 +48,23 @@ export default function CocktailPage({}: Props) {
         strIngredient3,
         strIngredient4,
         strIngredient5,
+        strIngredient6,
+        strIngredient7,
+        strIngredient8,
+        strIngredient9,
+        strIngredient10,
+        strIngredient11,
+        strIngredient12,
+        strIngredient13,
+        strIngredient14,
+        strIngredient15,
       } = drinks[0];
 
+      // Spliting Plain Instructions String into a Array of String
       const newInstruction: string[] = strInstructions
         .split(".")
         .map((point: string) => point.trim())
         .filter((points: string) => points !== "");
-      console.log(newInstruction);
 
       const FilteredCocktail: Cocktail = {
         Name: strDrink,
@@ -70,6 +80,16 @@ export default function CocktailPage({}: Props) {
           strIngredient3,
           strIngredient4,
           strIngredient5,
+          strIngredient6,
+          strIngredient7,
+          strIngredient8,
+          strIngredient9,
+          strIngredient10,
+          strIngredient11,
+          strIngredient12,
+          strIngredient13,
+          strIngredient14,
+          strIngredient15,
         ],
       };
 
@@ -98,7 +118,6 @@ export default function CocktailPage({}: Props) {
     <main className="max-w-[1440px] mx-auto px-4 py-10 sm:px-6 lg:px-12 space-y-8 xl:px-20">
       <CustomLink
         RippleColor="hsl(var(--n) / 0.2)"
-        className="slide-top"
         pathTo="/"
       >
         <svg
@@ -134,7 +153,7 @@ export default function CocktailPage({}: Props) {
                 {cocktail[0].Glass}
               </p>
               <Tooltip
-                className="tooltip-left sm:tooltip-right"
+                className="tooltip-right"
                 toolTipText={cocktail[0].Alcoholic}
               >
                 <div
@@ -180,7 +199,11 @@ export default function CocktailPage({}: Props) {
               {cocktail[0].Ingredients.map((item, index) => {
                 return (
                   <span
-                    className="bg-primary text-primary-content rounded-full px-3 py-1 font-medium text-sm"
+                    className={`${
+                      item !== null
+                        ? "bg-primary text-primary-content rounded-full px-3 py-1 font-medium text-sm"
+                        : "hidden"
+                    } `}
                     key={index}
                   >
                     {item}
@@ -194,7 +217,7 @@ export default function CocktailPage({}: Props) {
         {/* Image  */}
         <div className="relative flex-1">
           <img
-            className="rounded-xl shadow-sm h-full object-cover"
+            className="rounded-xl shadow-sm h-full max-h-[540px] object-cover"
             src={cocktail[0].DrinkImage}
             alt={cocktail[0].Name + " Image"}
           />
