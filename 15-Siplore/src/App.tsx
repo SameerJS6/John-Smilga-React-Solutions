@@ -13,7 +13,6 @@ export default function App({}: Props) {
   return (
     <>
       <Navbar />
-      {/* <Drawer/> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

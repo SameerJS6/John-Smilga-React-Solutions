@@ -26,7 +26,6 @@ export default function SearchBar({}: SearchBarProps) {
         >
           <input
             type="text"
-            autoFocus
             value={inputValue}
             placeholder="Search By First Letter"
             className="input font-medium text-base capitalize input-ghost focus-visible:outline-none w-full"
