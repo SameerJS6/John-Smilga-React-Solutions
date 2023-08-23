@@ -9,7 +9,7 @@ type Props = {};
 export default function Home({}: Props) {
   const { showAlert } = useGlobalContext();
   return (
-    <main className="max-w-[1440px] mx-auto grid place-content-center space-y-24 py-24">
+    <main className="max-w-[1440px] mx-auto grid place-content-center space-y-16 lg:space-y-24 py-8 sm:py-6 lg:py-20 xl:py-24">
       <Hero />
       <SearchBar />
       <CocktailGrid />
