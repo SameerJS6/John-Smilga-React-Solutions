@@ -1,17 +1,17 @@
 import { useRef, useState } from "react";
 import useClickOutside from "../../hook/useClickOutside";
 import CustomLink from "../../Elements/CustomLink";
-import Dropdown from "./Dropdown";
 import Button from "../../Elements/Button";
+import Themes from "./Themes";
 
 type Props = {};
 
 export default function Navbar({}: Props) {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-   let MobileNavRef: React.RefObject<HTMLElement> = useRef(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  let MobileNavRef: React.RefObject<HTMLElement> = useRef(null);
 
   const closeMenu = (): void => {
-    setIsOpen(false)
+    setIsOpen(false);
   };
 
   useClickOutside(MobileNavRef, closeMenu);
@@ -150,7 +150,7 @@ export default function Navbar({}: Props) {
           </li>
 
           <li>
-            <Dropdown />
+            <Themes />
           </li>
 
           <li>
