@@ -5,18 +5,6 @@
 body {
   transition: color 350ms ease-in-out, background-color 350ms ease-in-out;
 }
-.path {
-  clip-path: polygon(
-    21% 67%,
-    13% 24%,
-    35% 29%,
-    96% 48%,
-    96% 27%,
-    0% 45%,
-    58% 61%,
-    74% 15%
-  );
-}
 
 /* Mobile Navbar  */
 @media (max-width: 1023px) {
@@ -38,75 +26,26 @@ body {
   }
 }
 
+/* Main SearchBar Focus Styling  */
 .inputBox:has(input:focus-visible) {
   outline: 2px solid;
   outline-offset: 4px;
-  outline-color: hsl(var(--n) / 0.6);
-  border: 2px solid hsl(var(--nf) / 0.7);
+  outline-color: hsl(var(--bc) / 0.3);
+  border: 2px solid hsl(var(--bc) / 0.5);
 }
 
-/* Animation  */
-
-.shake {
-  animation: shakeAnim 7s ease-in infinite;
-}
-@keyframes shakeAnim {
-  0% {
-    left: 0;
-  }
-  1% {
-    left: -3px;
-  }
-  2% {
-    left: 5px;
-  }
-  3% {
-    left: -8px;
-  }
-  4% {
-    left: 8px;
-  }
-  5% {
-    left: -5px;
-  }
-  6% {
-    left: 3px;
-  }
-  7% {
-    left: 0;
-  }
-}
-
-.tracking-in {
-  text-wrap: balance;
-  animation: tracking-in 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-}
-@keyframes tracking-in {
-  0% {
-    letter-spacing: 0.5em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    letter-spacing: normal;
-    opacity: 1;
-  }
-}
-
-.slide-top {
-  animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-@keyframes slide-top {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
+/* Background Pattern ClipPath  */
+.path {
+  clip-path: polygon(
+    21% 67%,
+    13% 24%,
+    35% 29%,
+    96% 48%,
+    96% 27%,
+    0% 45%,
+    58% 61%,
+    74% 15%
+  );
 }
 
 /* Scrollbar Styling  */
@@ -130,19 +69,7 @@ body {
   }
 }
 
-.gradient-background {
-  background-size: 120% 120%;
-  animation: gradient-animation 10s ease infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Utility Class  */
+.text-balance {
+  text-wrap: balance;
 }
