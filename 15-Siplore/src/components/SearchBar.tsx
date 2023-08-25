@@ -11,17 +11,20 @@ export default function SearchBar({}: SearchBarProps) {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    inputValue ? setSearchTerm(inputValue) : setShowAlert(true)
+    inputValue ? setSearchTerm(inputValue) : setShowAlert(true);
   };
 
   return (
-    <div id="SearchBar" className="slide-top mx-auto w-full lg:w-[35rem] max-w-lg px-4">
+    <div
+      id="SearchBar"
+      className="slide-top mx-auto w-full lg:w-[35rem] max-w-lg px-4"
+    >
       <form onSubmit={handleSubmit}>
         <div
           className={`${
             showAlert
               ? "shake relative border-error"
-              : "inputBox border-base-300"
+              : "inputBox border-primary-focus border-opacity-25"
           }  flex bg-base-100 border-2 shadow-md gap-2 py-2 px-2 transition-all rounded-full items-center justify-between`}
         >
           <input

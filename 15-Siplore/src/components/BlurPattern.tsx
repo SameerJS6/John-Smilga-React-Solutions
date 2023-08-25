@@ -14,7 +14,7 @@ export default function BlurPattern({
   return (
     <div
       className={twMerge(
-        "absolute pointer-events-none inset-x-0 -z-10 transform-gpu overflow-hidden blur-3xl ",
+        "absolute pointer-events-none inset-x-0 -z-10 transform-gpu overflow-hidden opac blur-3xl ",
         containerClassName
       )}
       aria-hidden="true"
