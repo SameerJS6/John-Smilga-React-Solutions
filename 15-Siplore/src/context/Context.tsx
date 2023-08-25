@@ -15,6 +15,7 @@ type AppContextType = {
   setShowAlert: Dispatch<React.SetStateAction<boolean>>;
   cocktails: Cocktail[];
   setSearchTerm: Dispatch<React.SetStateAction<string>>;
+  searchTerm: string;
 };
 
 type AppProviderProp = {
@@ -24,10 +25,8 @@ type AppProviderProp = {
 type Cocktail = {
   id: number;
   DrinkName: string;
-  Tags: string;
   Category: string;
   Alcoholic: string;
-  Instructions: string;
   DrinkImage: string;
 };
 
@@ -57,20 +56,16 @@ const AppProvider = ({ children }: AppProviderProp) => {
           const {
             idDrink,
             strDrink,
-            strTags,
             strCategory,
             strAlcoholic,
-            strInstructions,
             strDrinkThumb,
           } = item;
 
           return {
             id: parseInt(idDrink),
             DrinkName: strDrink,
-            Tags: strTags,
             Category: strCategory,
             Alcoholic: strAlcoholic,
-            Instructions: strInstructions,
             DrinkImage: strDrinkThumb,
           };
         });
@@ -100,7 +95,14 @@ const AppProvider = ({ children }: AppProviderProp) => {
 
   return (
     <AppContext.Provider
-      value={{ isLoading, showAlert, cocktails, setSearchTerm, setShowAlert }}
+      value={{
+        isLoading,
+        showAlert,
+        cocktails,
+        setSearchTerm,
+        setShowAlert,
+        searchTerm,
+      }}
     >
       {children}
     </AppContext.Provider>
