@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  transition: color 350ms ease-in-out, background-color 350ms ease-in-out;
+}
 .path {
   clip-path: polygon(
     21% 67%,
@@ -129,7 +132,7 @@
 
 .gradient-background {
   background-size: 120% 120%;
-  animation: gradient-animation 1s ease infinite;
+  animation: gradient-animation 10s ease infinite;
 }
 
 @keyframes gradient-animation {
