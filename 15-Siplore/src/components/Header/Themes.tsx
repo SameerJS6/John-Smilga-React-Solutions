@@ -4,17 +4,30 @@ import useClickOutside from "../../hook/useClickOutside";
 import { themeChange } from "theme-change";
 type Props = {};
 
-const ThemesOptions: string[] = [
-  "light",
-  "night",
-  "cupcake",
-  "lofi",
-  "black",
-  "luxury",
-  "wireframe",
-  "retro",
-  "pastel",
-  "valentine",
+// const ThemesOptions: string[] = [
+//   "light",
+//   "night",
+//   "cupcake",
+//   "lofi",
+//   "black",
+//   "luxury",
+//   "wireframe",
+//   "retro",
+//   "pastel",
+//   "valentine",
+// ];
+
+const ThemesOptions = [
+  { theme: "light", value: "light" },
+  { theme: "midnight", value: "night" },
+  { theme: "sweet", value: "cupcake" },
+  { theme: "lofi", value: "lofi" },
+  { theme: "timeless", value: "black" },
+  { theme: "lavish", value: "luxury" },
+  { theme: "effortless", value: "wireframe" },
+  { theme: "retro", value: "retro" },
+  { theme: "subtle", value: "pastel" },
+  { theme: "barbie", value: "valentine" },
 ];
 
 export default function Themes({}: Props) {
@@ -70,16 +83,17 @@ export default function Themes({}: Props) {
         </svg>
         Themes
       </summary>
-      <ul className="p-2 flex-nowrap shadow menu dropdown-content space-y-4 z-[1] bg-base-200 max-h-[400px] overflow-y-scroll rounded-lg w-56">
-        {ThemesOptions.map((theme, index) => {
+      <ul className="p-2 flex-nowrap shadow menu dropdown-content space-y-4 z-[100] bg-base-200 max-h-[12rem] lg:max-h-[400px] overflow-y-scroll rounded-lg w-56">
+        {ThemesOptions.map((color, index) => {
+          const {theme, value} = color
           return (
             <button
               key={index}
-              data-theme={theme}
-              data-set-theme={theme}
-              onClick={() => setActiveTheme(theme)}
+              data-theme={value}
+              data-set-theme={value}
+              onClick={() => setActiveTheme(value)}
               className={`btn rounded-md capitalize text-base font-medium w-full theme ${
-                theme === activeTheme ? "btn-active" : ""
+                value === activeTheme ? "btn-active" : ""
               }`}
             >
               <div className="flex items-center gap-5 justify-between w-full">
@@ -92,7 +106,7 @@ export default function Themes({}: Props) {
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     className={`w-3 h-3 ${
-                      theme === activeTheme ? "visible" : "invisible"
+                      value === activeTheme ? "visible" : "invisible"
                     }`}
                   >
                     <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
