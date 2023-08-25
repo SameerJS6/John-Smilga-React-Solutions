@@ -116,26 +116,25 @@ export default function CocktailPage({}: Props) {
 
   return (
     <main className="max-w-[1440px] mx-auto px-4 py-10 sm:px-6 lg:px-12 space-y-8 xl:px-20">
-      <CustomLink
-        RippleColor="hsl(var(--n) / 0.2)"
-        pathTo="/"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-5 h-5"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-          />
-        </svg>
-        Go Back
-      </CustomLink>
+      <div className="slide-top">
+        <CustomLink RippleColor="hsl(var(--n) / 0.2)" pathTo="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-5 h-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+            />
+          </svg>
+          Go Back
+        </CustomLink>
+      </div>
       <div className="slide-top flex flex-col-reverse sm:flex-col md:flex-row gap-6 sm:gap-10 md:gap-4 lg:gap-10">
         <div className="flex-1 bg-base-200 shadow-sm px-4 py-6 sm:p-6 lg:p-8 xl:p-10 rounded-lg space-y-8">
           {/* Header  */}
