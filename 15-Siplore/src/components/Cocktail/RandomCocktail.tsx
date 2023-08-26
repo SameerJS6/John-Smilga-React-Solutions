@@ -1,5 +1,5 @@
-import Tooltip from "../Elements/Tooltip";
-import CustomLink from "../Elements/CustomLink";
+import Tooltip from "../../Reusuable Components/Tooltip";
+import CustomLink from "../../Reusuable Components/CustomLink";
 import axios from "axios";
 import { useState, useEffect } from "react";
 

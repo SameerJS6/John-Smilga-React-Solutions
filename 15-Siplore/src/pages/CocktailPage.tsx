@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Loader from "../components/Loader";
-import Tooltip from "../Elements/Tooltip";
-import CustomLink from "../Elements/CustomLink";
+import Loader from "../Reusuable Components/Loader";
+import Tooltip from "../Reusuable Components/Tooltip";
+import CustomLink from "../Reusuable Components/CustomLink";
 
 type Props = {};
 
@@ -66,6 +66,7 @@ export default function CocktailPage({}: Props) {
         .map((point: string) => point.trim())
         .filter((points: string) => points !== "");
 
+      // Renaming and Assigning all the destructed value to simple name and a object
       const FilteredCocktail: Cocktail = {
         Name: strDrink,
         Tags: strTags,
@@ -229,5 +230,3 @@ export default function CocktailPage({}: Props) {
     </main>
   );
 }
-
-// This page will show the deails of single Cocktails /cocktail/178364

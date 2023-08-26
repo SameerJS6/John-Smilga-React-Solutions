@@ -1,7 +1,6 @@
-import { useGlobalContext } from "../context/Context";
-import Loader from "./Loader";
+import { useGlobalContext } from "../../context/Context";
+import Loader from "../../Reusuable Components/Loader";
 import CocktailCard from "./CocktailCard";
-// import Button from "../Elements/Button";
 
 type Props = {};
 
@@ -38,38 +37,9 @@ export default function CocktailGrid({}: Props) {
     <section className="space-y-20 p-4 sm:px-6 lg:px-10 xl:px-12">
       {cocktails.length > 0 && (
         <div className="flex items-center justify-between">
-          <h1 className=" text-6xl text-left text-base-content slide-top">
+          <h1 className="text-6xl text-left text-base-content slide-top">
             Cocktails
           </h1>
-
-          {/* <div className="dropdown dropdown-left dropdown-bottom">
-            <label tabIndex={0} className="btn m-1">
-              Sort
-            </label>
-            <ul
-              tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 gap-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <Button onClick={() => Sorting("Alcoholic")}>
-                <div
-                  className="border-2 w-fit p-1 ml-3.5 
-                      border-error"
-                >
-                  <div className="w-2 h-2 rounded-full bg-error"></div>
-                </div>
-                Alcoholic
-              </Button>
-              <Button onClick={() => Sorting("Non alcoholic")}>
-                <div
-                  className="border-2 w-fit p-1 ml-3.5 
-                      border-success"
-                >
-                  <div className="w-2 h-2 rounded-full bg-success"></div>
-                </div>
-                Non Alcoholic
-              </Button>
-            </ul>
-          </div> */}
         </div>
       )}
 

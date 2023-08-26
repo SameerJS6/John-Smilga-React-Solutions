@@ -1,7 +1,8 @@
 import useRipple from "use-ripple-hook";
 import { twMerge } from "tailwind-merge";
+import React from "react";
 
-interface Props extends React.HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   rippleColor?: string;
   children: React.ReactNode;
@@ -13,7 +14,7 @@ export default function Button({
   children,
   className,
   ...props
-}: Props) {
+}: ButtonProps) {
   const [ripple, event] = useRipple({ color: rippleColor });
 
   return (

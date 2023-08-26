@@ -1,5 +1,5 @@
-import CustomLink from "../Elements/CustomLink";
-import BlurPattern from "../components/BlurPattern";
+import CustomLink from "../Reusuable Components/CustomLink";
+import BlurPattern from "../Reusuable Components/BlurPattern";
 type Props = {};
 
 export default function NotFound({}: Props) {

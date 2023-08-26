@@ -2,7 +2,7 @@ import useRipple from "use-ripple-hook";
 import { useRef, useState, useEffect } from "react";
 import useClickOutside from "../../hook/useClickOutside";
 import { themeChange } from "theme-change";
-import Button from "../../Elements/Button";
+import Button from "../../Reusuable Components/Button";
 type Props = {};
 
 const ThemesOptions = [

@@ -30,6 +30,7 @@ type Cocktail = {
   DrinkImage: string;
 };
 
+// API URL
 const CocktailUrl: string =
   "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=";
 
@@ -44,12 +45,12 @@ const AppProvider = ({ children }: AppProviderProp) => {
   const fetchCocktails = async () => {
     try {
       setIsLoading(true);
-
+      // Data Fetching
       const response = await axios.get(`${CocktailUrl}${searchTerm}`);
       const {
         data: { drinks },
       } = response;
-
+      // if drinks is not empty, then destructure and pass down to the state
       if (drinks) {
         // Destructing the requires property and renaming it for ease-of-use
         const newCocktails = drinks.map((item: any) => {
@@ -85,6 +86,7 @@ const AppProvider = ({ children }: AppProviderProp) => {
     fetchCocktails();
   }, [searchTerm]);
 
+  // For Alert to dismiss after 1 second
   useEffect(() => {
     let timeout = setTimeout(() => {
       setShowAlert(false);

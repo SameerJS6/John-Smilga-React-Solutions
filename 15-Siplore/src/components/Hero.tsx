@@ -1,5 +1,5 @@
-import BlurPattern from "../components/BlurPattern";
-import RandomCocktail from "./RandomCocktail";
+import BlurPattern from "../Reusuable Components/BlurPattern";
+import RandomCocktail from "./Cocktail/RandomCocktail";
 
 export default function Hero() {
   return (

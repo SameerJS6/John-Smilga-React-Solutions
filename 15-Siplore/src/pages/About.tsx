@@ -1,4 +1,4 @@
-import BlurPattern from "../components/BlurPattern";
+import BlurPattern from "../Reusuable Components/BlurPattern";
 
 type Props = {};
 

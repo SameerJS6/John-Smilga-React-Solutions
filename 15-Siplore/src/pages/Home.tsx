@@ -1,8 +1,8 @@
-import Alert from "../components/Alert";
-import CocktailGrid from "../components/CocktailGrid";
-import SearchBar from "../components/SearchBar";
+import Alert from "../Reusuable Components/Alert";
+import CocktailGrid from "../components/Cocktail/CocktailGrid";
+import SearchBar from "../components/Form/SearchBar";
 import { useGlobalContext } from "../context/Context";
-import Hero from "./Hero";
+import Hero from "../components/Hero";
 
 type Props = {};
 

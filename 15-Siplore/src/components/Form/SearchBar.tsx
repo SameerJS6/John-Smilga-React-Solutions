@@ -1,6 +1,6 @@
 import { FormEvent, ChangeEvent, useState } from "react";
-import { useGlobalContext } from "../context/Context";
-import Button from "../Elements/Button";
+import { useGlobalContext } from "../../context/Context";
+import Button from "../../Reusuable Components/Button";
 
 type SearchBarProps = {};
 
@@ -58,6 +58,3 @@ export default function SearchBar({}: SearchBarProps) {
     </div>
   );
 }
-// background-color: hsl(var(--n) / var(--tw-bg-opacity));
-//     --tw-text-opacity: 1;
-//     color: hsl(var(--nc) / var(--tw-text-opacity));

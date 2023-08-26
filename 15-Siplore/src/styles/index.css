@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 body {
-  transition: color 350ms ease-in-out, background-color 350ms ease-in-out;
+  transition:
+    color 350ms ease-in-out,
+    background-color 350ms ease-in-out;
 }
 
 /* Mobile Navbar  */
