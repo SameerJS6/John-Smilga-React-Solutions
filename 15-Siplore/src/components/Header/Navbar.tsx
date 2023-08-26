@@ -13,6 +13,9 @@ export default function Navbar({}: Props) {
 
   const closeMenu = (): void => {
     setIsOpen(false);
+    if (document.title !== "Siplore") {
+      document.title = "Siplore"
+    }
   };
 
   useClickOutside(MobileNavRef, closeMenu);
@@ -22,7 +25,11 @@ export default function Navbar({}: Props) {
         {/* <Link to="/" className="btn btn-ghost normal-case text-xl">
           Siplore
         </Link> */}
-        <CustomLink pathTo="/" className="normal-case btn-ghost text-xl">
+        <CustomLink
+          onClick={() => (document.title = "Siplore")}
+          pathTo="/"
+          className="normal-case btn-ghost text-xl"
+        >
           Siplore
         </CustomLink>
         <Button
@@ -70,7 +77,11 @@ export default function Navbar({}: Props) {
         </Button>
         <ul className="menu menu-horizontal px-1 gap-2 lg:gap-3 items-center">
           <li>
-            <CustomLink onClick={closeMenu} className="btn-ghost " pathTo="/">
+            <CustomLink
+              onClick={closeMenu}
+              className="btn-ghost "
+              pathTo="/"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

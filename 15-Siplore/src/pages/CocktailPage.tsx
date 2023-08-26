@@ -117,7 +117,11 @@ export default function CocktailPage({}: Props) {
   return (
     <main className="max-w-[1440px] mx-auto px-4 py-10 sm:px-6 lg:px-12 space-y-8 xl:px-20">
       <div className="slide-top">
-        <CustomLink RippleColor="hsl(var(--n) / 0.2)" pathTo="/">
+        <CustomLink
+          onClick={() => (document.title = "Siplore")}
+          RippleColor="hsl(var(--n) / 0.2)"
+          pathTo="/"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
