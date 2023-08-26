@@ -2,20 +2,8 @@ import useRipple from "use-ripple-hook";
 import { useRef, useState, useEffect } from "react";
 import useClickOutside from "../../hook/useClickOutside";
 import { themeChange } from "theme-change";
+import Button from "../../Elements/Button";
 type Props = {};
-
-// const ThemesOptions: string[] = [
-//   "light",
-//   "night",
-//   "cupcake",
-//   "lofi",
-//   "black",
-//   "luxury",
-//   "wireframe",
-//   "retro",
-//   "pastel",
-//   "valentine",
-// ];
 
 const ThemesOptions = [
   { theme: "light", value: "light" },
@@ -36,7 +24,9 @@ export default function Themes({}: Props) {
   const [ripple, event] = useRipple();
   const [isActive, setIsActive] = useState<boolean>(false);
   const [activeTheme, setActiveTheme] = useState<string>(
-    StoredTheme ? StoredTheme : ""
+    StoredTheme || window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "night"
+      : "light"
   );
 
   let DropDownRef: React.RefObject<HTMLDetailsElement> = useRef(null);
@@ -51,7 +41,27 @@ export default function Themes({}: Props) {
   useClickOutside(DropDownRef, closeDropDown);
 
   useEffect(() => {
+    if (StoredTheme) {
+      setActiveTheme(StoredTheme);
+    }
+  }, [StoredTheme]);
+
+  useEffect(() => {
     themeChange(false);
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const handleColorSchemeChange = (e: MediaQueryListEvent) => {
+      const newTheme = e.matches ? "night" : "light";
+      setActiveTheme(newTheme);
+      localStorage.setItem("theme", newTheme);
+    };
+
+    mediaQuery.addEventListener("change", handleColorSchemeChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleColorSchemeChange);
+    };
   }, []);
 
   return (
@@ -85,14 +95,14 @@ export default function Themes({}: Props) {
       </summary>
       <ul className="p-2 flex-nowrap shadow menu dropdown-content space-y-4 z-[100] bg-base-200 max-h-[12rem] lg:max-h-[400px] overflow-y-scroll rounded-lg w-56">
         {ThemesOptions.map((color, index) => {
-          const {theme, value} = color
+          const { theme, value } = color;
           return (
-            <button
+            <Button
               key={index}
               data-theme={value}
               data-set-theme={value}
               onClick={() => setActiveTheme(value)}
-              className={`btn rounded-md capitalize text-base font-medium w-full theme ${
+              className={`rounded-md capitalize text-base font-medium w-full theme ${
                 value === activeTheme ? "btn-active" : ""
               }`}
             >
@@ -123,7 +133,7 @@ export default function Themes({}: Props) {
                   <span className="bg-neutral rounded-full shadow w-2 h-4"></span>
                 </div>
               </div>
-            </button>
+            </Button>
           );
         })}
       </ul>
