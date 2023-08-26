@@ -2,6 +2,9 @@ import BlurPattern from "../components/BlurPattern";
 
 type Props = {};
 
+const ImageURL: string =
+  "https://lh3.googleusercontent.com/pw/AIL4fc_u3Q5wlM6PcFyjstIed2KvGtusdr6BeDNcBgNZDxwCXmjnUnufvD3DzObILTl2njP-cO-sHxlJKMlwrJcA11Zc-0jc0ctTeAa2bt3q_UoYybIGs8gxz1hao0-NKzRaeNfFpij32_NqUnyqDPvTdmsk=w1097-h731-s-no?authuser=0";
+
 export default function About({}: Props) {
   return (
     <main className="max-w-[1440px] mx-auto space-y-8 isolate text-left py-8 sm:py-6 lg:py-20 xl:py-24 relative px-6 sm:px-8 md:px-10 lg:px-12 xl:px-32">
@@ -20,7 +23,7 @@ export default function About({}: Props) {
         <div className="flex-1">
           <img
             className="rounded-xl shadow-sm max-h-[450px] object-cover h-full mx-auto"
-            src="https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+            src={ImageURL}
             alt="Cocktail Image"
           />
         </div>
