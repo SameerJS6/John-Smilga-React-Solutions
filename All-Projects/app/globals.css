@@ -106,6 +106,7 @@
 .overlay::after {
   @apply content-[""] absolute inset-0 rounded-3xl bg-gradient-to-b from-[#00000017] to-[#00000080] opacity-0 transition-all duration-300 ease-in-out;
 }
-.overlay:hover::after {
+.overlay:hover::after,
+.overlay:focus-visible::after {
   @apply opacity-100;
 }
