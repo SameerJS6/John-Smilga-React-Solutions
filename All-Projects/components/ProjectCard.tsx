@@ -18,13 +18,13 @@ export default function ProjectCard({
       key={id}
       href={url}
       target="_blank"
-      className="relative rounded-3xl xl:rounded-[2rem] bg-zinc-900 overlay group"
+      className="relative rounded-3xl xl:rounded-[2rem] bg-zinc-900 overlay group active:rounded-[2rem] xl:active:rounded-[3rem] transition-all duration-300 ease-in-out"
     >
       <div className="relative">
         <Image
           src={Mockup}
           alt={projectTitle + " Mockups"}
-          className="rounded-3xl xl:rounded-[2rem]"
+          className="rounded-3xl xl:rounded-[2rem] group-active:rounded-[2rem] xl:group-active:rounded-[3rem] transition-all duration-300 ease-in-out"
         />
         <div className="z-10 absolute left-4 bottom-4 xl:bottom-6 xl:left-6 group-hover:opacity-100 opacity-0 translate-y-1 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0 transition-all duration-300 ease-in-out">
           <h1 className="capitalize text-2xl lg:text-3xl font-semibold tracking-tight ">
