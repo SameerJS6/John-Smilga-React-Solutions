@@ -1,5 +1,6 @@
 import { projectsType } from "@/data";
 import ProjectCard from "@/components/ProjectCard";
+import Cursor from "@/components/Cursor";
 
 export default async function Home() {
   const response = await fetch("http://localhost:3000/api/projects", {
@@ -14,6 +15,8 @@ export default async function Home() {
           return <ProjectCard key={project.id} {...project} />;
         })}
       </div>
+
+      <Cursor />
     </>
   );
 }
