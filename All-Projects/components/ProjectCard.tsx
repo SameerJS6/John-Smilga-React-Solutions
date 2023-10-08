@@ -13,7 +13,7 @@ export default function ProjectCard({
       key={id}
       href={url}
       target="_blank"
-      className="relative rounded-3xl xl:rounded-[2rem] bg-zinc-900 overlay group active:rounded-[2rem] xl:active:rounded-[3rem] transition-all duration-300 ease-in-out self-start "
+      className="relative rounded-3xl xl:rounded-[2rem] bg-zinc-900 overlay group active:rounded-[2rem] xl:active:rounded-[3rem] transition-all duration-300 ease-in-out self-start cursor-none"
     >
       <div className="relative">
         <Image
