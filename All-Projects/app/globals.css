@@ -110,3 +110,32 @@
 .overlay:focus-visible::after {
   @apply opacity-100;
 }
+
+/* Scrollbar for Body  */
+::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 100vmax;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+  margin-block: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--foreground));
+  border-radius: 100vmax;
+}
+@supports (scrollbar-color: white black) {
+  * {
+    scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
+    scrollbar-width: thin;
+  }
+}
+
+.scrollBody {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+}
