@@ -8,7 +8,7 @@ export default function Cursor() {
   const size = 50;
   return (
     <motion.div
-      className="fixed w-[50px] aspect-square rounded-full bg-white pointer-events-none"
+      className="fixed w-[50px] aspect-square rounded-full bg-white pointer-events-none hidden lg:block"
       animate={{ left: `${x - size / 2}px`, top: `${y - size / 2}px` }}
       transition={{ type: "tween", ease: "backOut" }}
     />
