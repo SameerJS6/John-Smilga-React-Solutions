@@ -3,7 +3,7 @@ import ProjectCard from "@/components/ProjectCard";
 import Cursor from "@/components/Cursor";
 
 export default async function Home() {
-  const response = await fetch("http://localhost:3000/api/projects", {
+  const response = await fetch("https://johnsmilga.vercel.app/api/projects", {
     method: "GET",
     cache: "no-cache",
   });
