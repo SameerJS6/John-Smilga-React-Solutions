@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { LegacyRef, useRef } from "react";
 import Image from "next/image";
 import { projectsType } from "@/data";
 
@@ -8,12 +10,27 @@ export default function ProjectCard({
   mainImg,
   projectTitle,
 }: projectsType) {
+  const projectCardRef = useRef<HTMLAnchorElement | undefined>(null);
+
+  const handleMouseMove: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
+    const { currentTarget: target } = e;
+    const rect = target.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
+
+    if (projectCardRef.current) {
+      projectCardRef.current.style.setProperty("--mouse-x", `${x}px`);
+      projectCardRef.current.style.setProperty("--mouse-y", `${y}px`);
+    }
+  };
   return (
     <a
       key={id}
       href={url}
       target="_blank"
-      className="relative rounded-3xl xl:rounded-[2rem] bg-zinc-900 overlay group active:rounded-[2rem] xl:active:rounded-[3rem] transition-all duration-300 ease-in-out self-start cursor-none"
+      ref={projectCardRef as LegacyRef<HTMLAnchorElement>}
+      onMouseMove={handleMouseMove}
+      className="projectCard relative rounded-3xl xl:rounded-[2rem] bg-zinc-900 overlay group active:rounded-[2rem] xl:active:rounded-[3rem] transition-all duration-300 ease-in-out self-start cursor-none"
     >
       <div className="relative">
         <Image
